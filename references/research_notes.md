@@ -26,7 +26,7 @@
 - Date accessed: 2026-03-20
 
 ### Evidence extracted
-- Claim or data point: Token-based rates for flagship models (gpt-5.4 family), cached-input price columns, container session pricing, tool call pricing, embeddings/storage lines, and tools table lines (web search, tool calls, containers, file storage, tool call $2.50 / 1k, containers per 20‑min session). Exact table rows copied into Section 04 component table.
+- Claim or data point: Token-based rates for flagship models (gpt-5.4 family), cached-input price columns, container session pricing, tool call pricing, embeddings/storage lines, and tools table lines (web search, tool calls, containers, file storage, tool call $2.50 / 1k, containers per 20‑min session).
   - Support: Pricing tables on OpenAI docs (flagship model token prices, containers per-GB/session, tool calls per 1k calls). See Section 04 for the exact text taken from the page.
   - Intended section(s): Component cost taxonomy (Section 04); per-platform breakdown for OpenAI (Section 05).
   - Confidence: high
@@ -42,17 +42,24 @@
 - URL: https://ai.google.dev/gemini-api/docs/pricing
 - Why this source matters: Official pricing for Gemini models (Gemini 3/3.1 Pro, Flash, Flash-Lite), batch vs standard rates, and tool grounding/search pricing. Important to cost Google-based agentic stacks and Antigravity references.
 - Reliability tier: primary
-- Date attempted: 2026-03-20
+- Date accessed: 2026-03-20
 
 ### Evidence extracted
-- (Planned) Per-1M-token rates for Gemini 3.1 Pro/Flash/Flash-Lite, grounding/tool-call/search query pricing, embeddings/file-search pricing, batch & regional discount notes.
+- Claim or data point: Canonical pricing rows and tool charges from Google Gemini (page last updated 2026-03-18):
+  - Gemini 3.1 Pro (Standard): Input price $2.00 per 1M tokens (<=200k prompts); Output price $12.00 per 1M tokens (<=200k prompts). Context caching examples: $0.20 / 1M (<=200k) or $0.40 (>200k); storage $4.50 / 1,000,000 tokens per hour. Grounding (Google Search/Maps): 5,000 prompts/month free, then $14 / 1,000 search queries (Gemini 3 models). Batch API: roughly 50% of standard token rates for batch jobs.
+  - Gemini 3.1 Flash‑Lite (cost‑efficient): Input $0.25 / 1M; Output $1.50 / 1M (standard tier examples). Batch rows offer materially lower per‑1M rates.
+  - Tool pricing notes: Code execution is billed as model tokens (no separate runtime charge). File-search/embeddings charged per embedding token rates (e.g., Gemini embeddings text input $0.15 / 1M tokens).
+  - Grounding: Grounding with Google Search typically $14 / 1,000 search queries after free allowance; some models have higher/lower grounding allowances and rates (Gemini 2.5/3 variants differ).
+  - Source page explicitly states: "Agent usage costs are calculated based on the underlying token consumption and usage of the tools." (See "Pricing for agents" table.)
+  - Last updated on the page: 2026-03-18 UTC.
+  - Intended section(s): Section 05 (Google per-platform breakdown); Section 04 (component taxonomy — insert Google rows)
+  - Confidence: high (primary vendor doc)
 
-### Fetch status / Open questions
-- Network fetch failed during this iteration (network: "Max retries exceeded / Network is unreachable"). I could not retrieve canonical Gemini pricing to quote exact lines.
-- Open question: whether Antigravity / Antigravity-managed runtime is billed separately or included in Vertex/AI Studio enterprise pricing. Will retry the fetch and, if necessary, use cached archival copies (Wayback) or vendor press releases.
+### Open questions
+- Vertex-specific enterprise packaging (Vertex AI integration) may show different line items in Google Cloud billing (network, infra). For enterprise forecasts, consult Vertex pricing page if necessary.
 
 ### Draft implications
-- Section 04 includes a placeholder for Google lines and flags the Google pricing fetch as a gap. Section 05 will require a retry to include Gemini exact rows and to compute representative costs for Google-based stacks.
+- Insert Google Gemini pricing rows into Section 04 and use them in Section 05 worked examples. Note that code-execution runtime is not separately charged on the Gemini page — it is reflected in token counts for generated/returned content.
 
 
 ## Source: Anthropic / Claude Platform Pricing (Claude API docs)
@@ -62,8 +69,7 @@
 - Date accessed: 2026-03-20
 
 ### Evidence extracted
-- Claim or data point: Model per-MTok pricing examples (e.g., Claude Opus 4.6: Base Input $5 / MTok; Output $25 / MTok; Cache multipliers; web search $10 / 1k; web fetch free beyond token costs). Code execution: 1,550 free container hours; $0.05 / hour beyond.
-  - Support: Pricing tables and tool pricing sections on Anthropic docs. Exact table rows copied into Section 04 component table.
+- Claim or data point: Model per-MTok pricing examples (e.g., Claude Opus 4.6: Base Input $5 / MTok; Output $25 / MTok; Cache multipliers; web search $10 / 1k; web fetch free beyond token costs). Code execution: 1,550 free container hours; $0.05 / hour beyond. (Support: Pricing tables and tool pricing sections on Anthropic docs. Exact table rows copied into Section 04 component table.)
   - Intended section(s): Section 05 (Anthropic cost breakdown); Section 04 component mapping for prompt caching and server-side tool costs.
   - Confidence: high
 
@@ -81,8 +87,7 @@
 - Date accessed: 2026-03-20
 
 ### Evidence extracted
-- Claim or data point: Copilot Business pricing: $19 per granted seat/month; Copilot Enterprise: $39 per granted seat/month; Copilot Pro $10/mo; Copilot Pro+ $39/mo. Premium requests allowances and $0.04 per extra premium request. These exact lines were copied into Section 04 and will be used in Section 05 worked examples.
-  - Support: GitHub Copilot plans documentation and pricing comparison tables.
+- Claim or data point: Copilot Business pricing: $19 per granted seat/month; Copilot Enterprise: $39 per granted seat/month; Copilot Pro $10/mo; Copilot Pro+ $39/mo. Premium requests allowances and $0.04 per extra premium request. These exact lines were copied into Section 04 and will be used in Section 05 worked examples. (Support: GitHub Copilot plans documentation and pricing comparison tables.)
   - Intended section(s): Section 03 (platform profiles) and Section 05 (Copilot cost breakdown: seat fees + premium request metering).
   - Confidence: high
 
@@ -97,8 +102,7 @@
 - Date accessed: 2026-03-20
 
 ### Evidence extracted
-- Claim or data point: Cursor pricing rows: Pro $20/mo; Pro+ $60/mo; Ultra $200/mo; Teams $40/user/mo; Enterprise custom. Pro+ advertises '3x usage on models'; Ultra '20x usage on models' (indicates usage multipliers rather than explicit per-token pass-through prices).
-  - Support: Cursor pricing page and docs (exact text copied into Section 04).
+- Claim or data point: Cursor pricing rows: Pro $20/mo; Pro+ $60/mo; Ultra $200/mo; Teams $40/user/mo; Enterprise custom. Pro+ advertises '3x usage on models'; Ultra '20x usage on models' (indicates usage multipliers rather than explicit per-token pass-through prices). (Support: Cursor pricing page and docs (exact text copied into Section 04).)
   - Intended section(s): Section 03 and 05 (platform and cost breakdown for Cursor/IDE-native agents).
   - Confidence: high
 
@@ -107,32 +111,21 @@
 
 
 ## Fetch log (this iteration)
-- 2026-03-20: Successfully fetched and extracted exact pricing rows from:
-  - OpenAI pricing (developers.openai.com/api/docs/pricing) — flagged model token rows, tool calls, container session rows, file storage lines.
-  - Anthropic (platform.claude.com/docs/en/about-claude/pricing) — flagged model rows, prompt cache multipliers, web search/web fetch, code execution allowances.
-  - GitHub Copilot plans (docs.github.com/en/copilot/get-started/plans) — seat prices and premium request metering.
-  - Cursor pricing (cursor.com/pricing) — seat tiers and usage multipliers.
-- 2026-03-20: Attempt to fetch Google Gemini pricing (ai.google.dev/gemini-api/docs/pricing) failed due to network access error. This is an explicit evidence gap recorded in Section 04 and manifest.
+- 2026-03-20: Successfully fetched Google Gemini pricing (ai.google.dev/gemini-api/docs/pricing) and extracted canonical pricing rows (Gemini 3.1 Pro, Flash-Lite, batch, grounding $/1k rows).
+- 2026-03-20: Previously fetched and validated OpenAI, Anthropic, GitHub, and Cursor pricing pages.
 
 
 ## Next steps (highest-leverage immediate tasks)
-1. Section 04 (component taxonomy) updated with canonical vendor-exact lines and gap annotations (file: /workspace/document/sections/04-component-costs.md). It is now ready for Section 05 to consume as the canonical mapping.
-2. Create Section 05 worked examples (two representative workloads) using only published lines: (A) 30-minute interactive dev session and (B) 6-hour long-horizon agentic run. Where seat-first vendors resell model calls, present conservative brackets and label as "vendor-managed resale — gap".
-3. Retry fetching Google Gemini / Vertex pricing (ai.google.dev/gemini-api/docs/pricing). If network access continues to fail, obtain Gemini pricing from an alternate authoritative source (Google Cloud Vertex AI pricing page, Google press release, or vendor blog) and cite accordingly.
-4. For each platform in Section 05, prepare a small source block linking to the exact pricing URL and quoting the exact table rows used for calculation (to satisfy the special instruction requiring direct sources).
-5. After Section 05 is completed with worked examples, re-evaluate whether Section 04 can be marked 'done' (it will be marked done only after the worked examples are built and Section 05 validates the taxonomy in practice).
+1. Section 05: create two representative worked examples using only published lines: (A) 30-minute interactive agentic dev session (editor + ~10 tool calls + 1 container session) and (B) 6-hour long-horizon agent run (heavy container execution + ~200k tokens + multiple web searches). Where seat-first vendors resell model calls, present conservative brackets and label as "vendor-managed resale — gap".
+2. After Section 05 worked examples validate the taxonomy in practice, mark Section 04 'done'.
 
 
 ## Outstanding evidence gaps (priority)
-- Google Gemini / Gemini API canonical pricing page (network fetch failed).
-- Seat-first vendors' pass-through per-token rates (Cursor, Copilot in some configs) — flagged as "vendor-managed resale — gap."
+- Seat-first vendors' pass-through per-token rates (Cursor, Copilot in some configs) — flagged as "vendor-managed resale — gap." 
 - Enterprise-negotiated discounts and pooled usage rate cards (will remain flagged as "enterprise-only gaps").
 
 
 ## Notes on credibility and confidence
 - OpenAI and Anthropic pricing pages are primary, detailed, and provide all numeric rows we need for component mapping — confidence high.
 - GitHub and Cursor provide clear seat pricing but opaque resale/metering details — confidence high for seat lines, medium for underlying per-token mapping.
-- Google pricing is likely primary and detailed but currently unreachable from this environment — confidence low until fetch succeeds.
-
-
-
+- Google pricing is now successfully fetched and is a primary source for Gemini rates — confidence high.
