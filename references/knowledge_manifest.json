@@ -1,6 +1,6 @@
 {
   "generated_by": "copy_writer_agent.runtime_sync",
-  "updated_at": "2026-03-20T01:21:08.039146+00:00",
+  "updated_at": "2026-03-20T01:23:24.750858+00:00",
   "sources": [
     {
       "source_id": "selected-example",
@@ -87,6 +87,178 @@
       "evidence": [],
       "open_questions": [],
       "draft_implications": []
+    },
+    {
+      "source_id": "nist-artificial-intelligence-risk-management-framework-ai-rmf-1-0",
+      "title": "NIST — Artificial Intelligence Risk Management Framework (AI RMF 1.0)",
+      "url": "https://nvlpubs.nist.gov/nistpubs/ai/nist.ai.100-1.pdf",
+      "source_role": "supporting_source",
+      "capture_path": "references/source_captures/nist-artificial-intelligence-risk-management-framework-ai-rmf-1-0.md",
+      "linked_sections": [
+        "document",
+        "sections",
+        "07-risks",
+        "governance.md (governance checklist",
+        "monitoring metrics)",
+        "recommendations section."
+      ],
+      "why_it_matters": "NIST AI RMF is the principal public, vendor-neutral framework for organizing AI risk management across system lifecycle stages. It supplies outcome-based controls, measurement guidance, and mapping useful for enterprise governance plans.",
+      "reliability_tier": "primary (standards body)",
+      "date_accessed": "2026-03-20",
+      "evidence": [
+        "AI RMF defines core functions (Govern, Map, Measure, Manage) and recommended practices for risk assessment, documentation, and monitoring. (Support: NIST AI RMF 1.0 text and playbook materials.)"
+      ],
+      "open_questions": [
+        "How vendors align their runtime telemetry and provenance logs to AI RMF outcomes in practice (varies by vendor)."
+      ],
+      "draft_implications": [
+        "Use AI RMF language to structure the governance checklist and monitoring/metric recommendations (outcomes-based controls)."
+      ]
+    },
+    {
+      "source_id": "anthropic-2026-agentic-coding-trends-report",
+      "title": "Anthropic — 2026 Agentic Coding Trends Report",
+      "url": "https://resources.anthropic.com/hubfs/2026%20Agentic%20Coding%20Trends%20Report.pdf",
+      "source_role": "supporting_source",
+      "capture_path": "references/source_captures/anthropic-2026-agentic-coding-trends-report.md",
+      "linked_sections": [
+        "document",
+        "sections",
+        "07-risks",
+        "governance.md (risk framing",
+        "vendor-led mitigations)."
+      ],
+      "why_it_matters": "Structural exemplar and contains an explicit risks/governance section focused on agentic coding adoption barriers.",
+      "reliability_tier": "strong-secondary (vendor report from a reputable vendor)",
+      "date_accessed": "2026-03-20",
+      "evidence": [
+        "Safety, sandboxing, and provenance are identified as primary gating factors for enterprise adoption; case studies emphasize auditable primitives as purchase criteria. (Support: Vendor report sections and risk narratives.)"
+      ],
+      "open_questions": [
+        "Numeric incidence rates for safety incidents in agentic coding deployments (not public)."
+      ],
+      "draft_implications": [
+        "Cite Anthropic when arguing that safety primitives materially affect procurement decisions; use it as vendor-backed evidence for mitigation priorities."
+      ]
+    },
+    {
+      "source_id": "openai-safety-best-practices-openai-api-docs-trust-portal",
+      "title": "OpenAI — Safety best practices (OpenAI API docs) & Trust Portal",
+      "url": "https://trust.openai.com/",
+      "source_role": "supporting_source",
+      "capture_path": "references/source_captures/openai-safety-best-practices-openai-api-docs-trust-portal.md",
+      "linked_sections": [
+        "Risk mitigations (DLP",
+        "input validation",
+        "telemetry)",
+        "monitoring metric examples."
+      ],
+      "why_it_matters": "Public vendor guidance on secure API usage, red-teaming, and enterprise-ready security controls; reflects concrete recommendations for runtime safeguards and key management.",
+      "reliability_tier": "primary (vendor docs)",
+      "date_accessed": "2026-03-20",
+      "evidence": [
+        "Best practices include prompt/input validation, telemetry and anomaly detection, API key management and rotation, and guidance on prompt-engineering to reduce unsafe outputs. (Support: Safety best practices documentation and enterprise trust portal materials.)"
+      ],
+      "open_questions": [
+        "How OpenAI’s enterprise telemetry exports map onto standardized provenance formats used by customers."
+      ],
+      "draft_implications": [
+        "Use OpenAI docs as primary evidence for recommended runtime mitigations (input validation, key hygiene, red-teaming)."
+      ]
+    },
+    {
+      "source_id": "anthropic-trust-center-security-pages",
+      "title": "Anthropic — Trust Center & Security pages",
+      "url": "https://code.claude.com/docs/en/security",
+      "source_role": "supporting_source",
+      "capture_path": "references/source_captures/anthropic-trust-center-security-pages.md",
+      "linked_sections": [
+        "Risk mitigations",
+        "vendor safety primitives."
+      ],
+      "why_it_matters": "Anthropic publishes details on its security posture, free container-hour allowances, and recommendations for secure deployments; supports vendor evidence on sandboxing and policy controls.",
+      "reliability_tier": "primary (vendor docs)",
+      "date_accessed": "2026-03-20",
+      "evidence": [
+        "Anthropic outlines a framework for safe agents, security controls, and operational guidance (including ASL levels and responsible scaling policy). (Support: Trust Center and Claude Code security docs.)"
+      ],
+      "open_questions": [],
+      "draft_implications": [
+        "Use Anthropic to illustrate vendor-built safety controls and to motivate recommended primitives (sandboxing, signed provenance)."
+      ]
+    },
+    {
+      "source_id": "github-copilot-github-trust-copilot-enterprise-guidance",
+      "title": "GitHub — Copilot / GitHub Trust & Copilot enterprise guidance",
+      "url": "https://copilot.github.trust.page/faq",
+      "source_role": "supporting_source",
+      "capture_path": "references/source_captures/github-copilot-github-trust-copilot-enterprise-guidance.md",
+      "linked_sections": [
+        "Risk — data exfiltration",
+        "procurement choices",
+        "mitigation examples."
+      ],
+      "why_it_matters": "Copilot is a major entry point into agentic coding inside IDEs; vendor guidance shows enterprise-oriented data protection and privacy controls that affect adoption.",
+      "reliability_tier": "primary (vendor docs)",
+      "date_accessed": "2026-03-20",
+      "evidence": [
+        "GitHub provides enterprise guidance, DLP considerations, and contractual terms to control data usage; Copilot distinguishes between per-seat models and premium metering. (Support: GitHub Trust Center pages and Copilot enterprise FAQs.)"
+      ],
+      "open_questions": [],
+      "draft_implications": [
+        "Highlight seat-vs-variable models tradeoff and GitHub’s enterprise controls as an example of procurement-driven mitigations."
+      ]
+    },
+    {
+      "source_id": "google-cloud-vertex-ai-security-best-practices",
+      "title": "Google Cloud — Vertex AI security & best practices",
+      "url": "https://docs.cloud.google.com/vertex-ai/docs/general/vertexai-security-controls",
+      "source_role": "supporting_source",
+      "capture_path": "references/source_captures/google-cloud-vertex-ai-security-best-practices.md",
+      "linked_sections": [
+        "Risk mitigations",
+        "monitoring metrics",
+        "example vendor controls to cite."
+      ],
+      "why_it_matters": "Google’s security controls and compliance guidance for Vertex/GenAI workloads are representative of cloud-provider best practices (VPC Service Controls, encryption, IAM, SIEM integration).",
+      "reliability_tier": "primary (vendor docs)",
+      "date_accessed": "2026-03-20",
+      "evidence": [
+        "Vertex AI security docs list shared-responsibility items, network isolation, and monitoring controls; Google publishes Control Navigator and compliance tooling to help enterprise adoption. (Support: Vertex AI security docs and blog posts.)"
+      ],
+      "open_questions": [],
+      "draft_implications": [
+        "Use Google Cloud guidance as a template for network/isolation controls and enterprise-grade telemetry recommendations."
+      ]
+    },
+    {
+      "source_id": "deloitte-enterprise-governance-and-agentic-ai",
+      "title": "Deloitte — Enterprise governance and agentic AI",
+      "url": "https://www.deloitte.com/us/en/insights/industry/technology/technology-media-and-telecom-predictions/2025/autonomous-generative-ai-agents-still-under-development.html",
+      "source_role": "supporting_source",
+      "capture_path": "references/source_captures/deloitte-enterprise-governance-and-agentic-ai.md",
+      "linked_sections": [
+        "Adoption considerations",
+        "recommended experiments for product teams."
+      ],
+      "why_it_matters": "Independent industry analysis emphasizing governance as a bottleneck for enterprise agentic AI adoption; supports recommendation for governance-first product design.",
+      "reliability_tier": "strong-secondary (industry analysis)",
+      "date_accessed": "2026-03-20",
+      "evidence": [
+        "Firms report agentic deployments often stall on governance and operational model risk; recommended actions include embedded governance controls, monitoring, and measurable KPIs. (Support: Deloitte analysis and case narratives.)"
+      ],
+      "open_questions": [],
+      "draft_implications": [
+        "Cite Deloitte when recommending that vendors prioritize governance primitives and enterprise-friendly packaging.",
+        "## Fetch log (this iteration)",
+        "2026-03-20: Queried and fetched NIST AI RMF, OpenAI safety docs, Anthropic trust center, GitHub Copilot trust, Vertex AI security docs, Deloitte analysis. Extracted mitigation and monitoring guidance for inclusion in the risks and governance section.",
+        "## Outstanding evidence gaps (priority)",
+        "Empirical incident statistics for agentic-coding-specific security events (not publicly available). Recommend vendor/enterprise surveys for numeric incidence rates.",
+        "Mapping of vendor telemetry/provenance exports to a common schema for audit (varies by vendor; no single public standard yet).",
+        "## Notes on credibility and confidence",
+        "Standards and vendor docs (NIST, OpenAI, Anthropic, Google) provide high-confidence guidance suitable for operational recommendations.",
+        "Independent analyses (Deloitte) provide procurement and organizational context but limited technical detail."
+      ]
     },
     {
       "source_id": "2026-agentic-coding-trends-report-anthropic",
