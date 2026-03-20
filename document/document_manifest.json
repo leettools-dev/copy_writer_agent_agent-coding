@@ -40,7 +40,7 @@
       "status": "draft",
       "summary": "Define components (model tokens, tool calls, container sessions, storage, IDE seats) and show typical cost ranges.",
       "table_plan": "Table of component definitions and mapping to pricing lines; candidate data source: OpenAI pricing page as canonical example.",
-      "notes": "Section updated 2026-03-20 with canonical vendor-exact pricing rows (OpenAI, Anthropic, GitHub, Cursor) and explicit gap annotations for Google Gemini (fetched) and vendor-managed resale. Still draft: will be marked 'done' after Section 05 worked examples validate the taxonomy in practice."}]}]
+      "notes": "Section updated 2026-03-20 with canonical vendor-exact pricing rows (OpenAI, Anthropic, GitHub, Cursor) and explicit gap annotations for Google Gemini (fetched) and vendor-managed resale. Still draft: will be marked 'done' after Section 05 worked examples validate the taxonomy in practice."
     },
     {
       "section_id": "05-platform-cost-breakdowns",
@@ -54,7 +54,7 @@
       "section_id": "06-opportunities-and-breakthroughs",
       "title": "Where the next breakthroughs will come from",
       "file": "document/sections/06-opportunities-and-breakthroughs.md",
-      "status": "pending",
+      "status": "draft",
       "summary": "Synthesize technical and market trends to identify top-five breakthrough areas with rationale and trade-offs."
     },
     {
@@ -74,19 +74,19 @@
   ],
   "special_instructions": [
     {
-      "instruction": "Top five agentic-coding platforms must be listed.",
+      "instruction": "We should have a list top five agentic-coding platforms or tools listed.",
       "status": "pass",
-      "notes": "Section 03 lists the five platforms: OpenAI, Anthropic (Claude), Google (Gemini/Vertex), GitHub Copilot, Cursor."
+      "notes": "Section 03 provides a sourced top-5 list (OpenAI, Anthropic/Claude, Google/Gemini, GitHub Copilot, Cursor)."
     },
     {
-      "instruction": "List most important components and their cost.",
+      "instruction": "We need to have the most important components (and their cost) in the agentic coding products.",
       "status": "pass",
-      "notes": "Section 04 defines components (tokens, tool calls, containers, seats, storage) and maps them to vendor-published pricing lines (draft)."
+      "notes": "Section 04 defines components and maps canonical vendor pricing lines (OpenAI, Anthropic, Google, GitHub, Cursor) in draft form."
     },
     {
-      "instruction": "Provide detailed cost breakdown for every top platform with direct source links.",
-      "status": "pending",
-      "notes": "Section 05 drafted with headline public pricing lines and direct pricing URLs; next step is representative worked examples using these lines."
+      "instruction": "We need to have detailed cost breakdown for every top agentic coding platform (with direct source to their public pricing page).",
+      "status": "in_progress",
+      "notes": "Section 05 now contains platform summaries and two representative worked examples using published pricing lines. Remaining gaps: seat-first vendor pass-through token rates and enterprise discounts."
     }
   ]
 }

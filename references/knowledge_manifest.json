@@ -1,15 +1,24 @@
 {
   "generated_by": "copy_writer_agent.runtime_sync",
-  "updated_at": "2026-03-20T01:07:07.128293+00:00",
+  "updated_at": "2026-03-20T01:11:11.771338+00:00",
   "sources": [
     {
       "source_id": "selected-example",
       "title": "Selected Example",
-      "url": null,
+      "url": "https://resources.anthropic.com/hubfs/2026%20Agentic%20Coding%20Trends%20Report.pdf",
       "source_role": "selected_example",
       "capture_path": "references/selected_example.md",
-      "linked_sections": [],
-      "why_it_matters": "Primary structure model for the current document.",
+      "linked_sections": [
+        "Executive summary and key findings",
+        "Agentic coding landscape: platforms, models, and developer workflows",
+        "Top five agentic-coding platforms — feature and cost overview",
+        "Important components and per-component cost taxonomy",
+        "Detailed cost breakdowns for each top platform",
+        "Where the next breakthroughs will come from",
+        "Risks, governance, and adoption considerations",
+        "Recommendations for product teams and investors"
+      ],
+      "why_it_matters": "Anthropic 2026 Agentic Coding Trends Report selected as structural exemplar; complemented with vendor pricing pages and independent analyses.",
       "evidence": [],
       "open_questions": [],
       "draft_implications": []
