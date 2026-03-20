@@ -1,0 +1,10 @@
+{
+  "app_id": "final_result_app",
+  "name": "Final Document Editor",
+  "version": "0.1.0",
+  "mount_path": "/final-result",
+  "entry": "entry.js",
+  "icon": "document-text",
+  "order": 50,
+  "enabled": true
+}
