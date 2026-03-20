@@ -20,7 +20,7 @@
       "section_id": "02-landscape",
       "title": "Agentic coding landscape: platforms, models, and developer workflows",
       "file": "document/sections/02-landscape.md",
-      "status": "pending",
+      "status": "done",
       "summary": "Map of current platforms, agent capabilities, and how developers use agentic workflows."
     },
     {
@@ -30,7 +30,8 @@
       "status": "pending",
       "summary": "Listings and short profiles of the top 5 platforms, with direct pricing links and a cost breakdown plan.",
       "evidence_plan": "Use vendor pricing pages (OpenAI, Anthropic, Google, GitHub/Copilot, Cursor/Replit) and vendor docs.",
-      "table_plan": "Create a table listing each platform, core components, and pricing URL."
+      "table_plan": "Create a table listing each platform, core components, and pricing URL.",
+      "notes": "Section 02 completed: capability mapping and features matrix. Section 03 will re-use these capability axes for platform profiles."
     },
     {
       "section_id": "04-component-costs",
@@ -87,4 +88,5 @@
       "notes": "Section 05 will collect vendor pricing pages and cite them."
     }
   ]
+}
 }
