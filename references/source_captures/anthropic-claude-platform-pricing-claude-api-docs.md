@@ -9,7 +9,7 @@
 - Date accessed: 2026-03-20
 
 ## Evidence extracted
-- Model per-MTok pricing examples (e.g., Sonnet/Opus input/output rates, cache multipliers), tool-specific charges (web search $10/1k calls), code execution billing details (1,550 free container hours, $0.05 per hour beyond), file storage and file search pricing. (Support: Pricing tables and tool pricing sections on Anthropic docs.)
+- Model per-MTok pricing examples (e.g., Claude Opus 4.6: Base Input $5 / MTok; Output $25 / MTok; Cache multipliers; web search $10 / 1k; web fetch free beyond token costs). Code execution: 1,550 free container hours; $0.05 / hour beyond. (Support: Pricing tables and tool pricing sections on Anthropic docs. Exact table rows copied into Section 04 component table.)
 
 ## Open questions
 - Anthropic enterprise packaging and negotiated discounts — will note gaps where public pricing is insufficient and flag for enterprise sales contact.

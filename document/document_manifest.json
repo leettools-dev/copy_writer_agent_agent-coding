@@ -39,7 +39,8 @@
       "file": "document/sections/04-component-costs.md",
       "status": "draft",
       "summary": "Define components (model tokens, tool calls, container sessions, storage, IDE seats) and show typical cost ranges.",
-      "table_plan": "Table of component definitions and mapping to pricing lines; candidate data source: OpenAI pricing page as canonical example."
+      "table_plan": "Table of component definitions and mapping to pricing lines; candidate data source: OpenAI pricing page as canonical example.",
+      "notes": "Section updated 2026-03-20 with canonical vendor-exact pricing rows (OpenAI, Anthropic, GitHub, Cursor) and explicit gap annotations for Google Gemini (fetch failed) and vendor-managed resale. Still draft: will be marked 'done' after Section 05 worked examples validate the taxonomy in practice."
     },
     {
       "section_id": "05-platform-cost-breakdowns",
