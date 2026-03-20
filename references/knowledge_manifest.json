@@ -1,6 +1,6 @@
 {
   "generated_by": "copy_writer_agent.runtime_sync",
-  "updated_at": "2026-03-20T01:25:10.299062+00:00",
+  "updated_at": "2026-03-20T01:28:08.730701+00:00",
   "sources": [
     {
       "source_id": "selected-example",
@@ -18,7 +18,7 @@
         "Risks, governance, and adoption considerations",
         "Recommendations for product teams and investors"
       ],
-      "why_it_matters": "Anthropic 2026 Agentic Coding Trends Report selected as structural exemplar; complemented with vendor pricing pages and independent analyses. Section 04 updated with a sourced component taxonomy and a compact vendor-mapped table (2026-03-20).",
+      "why_it_matters": "Anthropic 2026 Agentic Coding Trends Report selected as structural exemplar; complemented with vendor pricing pages and independent analyses. Section 04 contains a sourced component taxonomy and a vendor-mapped table. Section 05 now includes worked examples computed strictly from published pricing lines (2026-03-20).",
       "evidence": [],
       "open_questions": [],
       "draft_implications": []
@@ -258,6 +258,59 @@
         "## Notes on credibility and confidence",
         "Standards and vendor docs (NIST, OpenAI, Anthropic, Google) provide high-confidence guidance suitable for operational recommendations.",
         "Independent analyses (Deloitte) provide procurement and organizational context but limited technical detail."
+      ]
+    },
+    {
+      "source_id": "openai-pricing-api-docs",
+      "title": "OpenAI — Pricing (API docs)",
+      "url": "https://developers.openai.com/api/docs/pricing/",
+      "source_role": "supporting_source",
+      "capture_path": "references/source_captures/openai-pricing-api-docs.md",
+      "linked_sections": [
+        "document",
+        "sections",
+        "04-component-costs.md (mapping components to vendor lines)",
+        "05-platform-cost-breakdowns.md (worked examples using published rates)."
+      ],
+      "why_it_matters": "Official, detailed pricing lines for models, tools, containers, and storage used to compute representative agentic-coding workload costs and component mappings.",
+      "reliability_tier": "primary (vendor pricing page)",
+      "date_accessed": "2026-03-20",
+      "evidence": [
+        "Flagship model pricing (example for gpt-5.4 short-context): Input $2.50 / 1M tokens; Output $15.00 / 1M tokens. Tool call pricing: $2.50 / 1k calls. Container pricing: 4 GB = $0.12 per 20-minute session (1 GB = $0.03 per 20-min). File storage: $0.10 / GB-day (1 GB free). Detailed tables and examples on the OpenAI pricing page show short-context, long-context, and priority tiers with per-model differences. (Support: Quoted pricing table and Tools section on OpenAI Pricing page (\"Flagship models\" and \"Tools\" tables).)"
+      ],
+      "open_questions": [
+        "How regional pricing uplifts (10% for regional endpoints) affect enterprise procurement in different geographies for sustained agent workloads.",
+        "Whether model output vs input split is consistently applied across vendor invoicing for complex agent workloads that intermix tool tokens."
+      ],
+      "draft_implications": [
+        "Use OpenAI pricing as a canonical example for component mapping (token input/output, tool calls, containers) and for constructing conservative worked examples. Flag regional/residency uplift and multi-component token accounting as procurement caveats."
+      ]
+    },
+    {
+      "source_id": "anthropic-claude-pricing-claude-api-docs",
+      "title": "Anthropic (Claude) — Pricing (Claude API docs)",
+      "url": "https://platform.claude.com/docs/en/about-claude/pricing",
+      "source_role": "supporting_source",
+      "capture_path": "references/source_captures/anthropic-claude-pricing-claude-api-docs.md",
+      "linked_sections": [
+        "document",
+        "sections",
+        "04-component-costs.md (component mapping)",
+        "05-platform-cost-breakdowns.md (worked examples A",
+        "B using published rates)."
+      ],
+      "why_it_matters": "Official pricing lines for Claude models and agent tooling (prompt caching multipliers, tool pricing, code execution allowances) directly inform per-platform cost breakdowns and highlight vendor-specific primitives such as free container-hour allowances and per-search web costs.",
+      "reliability_tier": "primary (vendor pricing page)",
+      "date_accessed": "2026-03-20",
+      "evidence": [
+        "Claude Opus 4.6 example pricing: Base input $5 / MTok; Output $25 / MTok (Opus 4.6). Web search tool: $10 per 1,000 searches. Code-execution/container: 1,550 free container hours per organization; beyond that billing at $0.05 per hour, per container. Prompt caching multipliers and long-context premium tiers documented; regional endpoint premium (10%) for some models when using regional endpoints. (Support: Claude \"Model pricing\" table, Tool use pricing, and Code execution tool sections on the Claude Pricing page.)"
+      ],
+      "open_questions": [
+        "How free container-hour allowances translate for multi-team enterprise accounts and whether they are pro-rated by workspace or org.",
+        "Volume discounts and how prompt caching multipliers interplay with batch discounts in large-scale agent deployments."
+      ],
+      "draft_implications": [
+        "Use Anthropic pricing to show how vendor-level safety/compute concessions (free container hours) materially reduce marginal runtime costs for code-execution-heavy agents; surface prompt-caching and batch discounts as levers for cost optimization."
       ]
     },
     {

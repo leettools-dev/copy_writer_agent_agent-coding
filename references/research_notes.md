@@ -136,3 +136,43 @@
 ## Notes on credibility and confidence
 - Standards and vendor docs (NIST, OpenAI, Anthropic, Google) provide high-confidence guidance suitable for operational recommendations.
 - Independent analyses (Deloitte) provide procurement and organizational context but limited technical detail.
+
+
+## Source: OpenAI — Pricing (API docs)
+- URL: https://developers.openai.com/api/docs/pricing/
+- Why this source matters: Official, detailed pricing lines for models, tools, containers, and storage used to compute representative agentic-coding workload costs and component mappings.
+- Reliability tier: primary (vendor pricing page)
+- Date accessed: 2026-03-20
+
+### Evidence extracted
+- Claim or data point: Flagship model pricing (example for gpt-5.4 short-context): Input $2.50 / 1M tokens; Output $15.00 / 1M tokens. Tool call pricing: $2.50 / 1k calls. Container pricing: 4 GB = $0.12 per 20-minute session (1 GB = $0.03 per 20-min). File storage: $0.10 / GB-day (1 GB free). Detailed tables and examples on the OpenAI pricing page show short-context, long-context, and priority tiers with per-model differences.
+  - Support: Quoted pricing table and Tools section on OpenAI Pricing page ("Flagship models" and "Tools" tables).
+  - Intended section(s): document/sections/04-component-costs.md (mapping components to vendor lines); document/sections/05-platform-cost-breakdowns.md (worked examples using published rates).
+  - Confidence: high
+
+### Open questions
+- How regional pricing uplifts (10% for regional endpoints) affect enterprise procurement in different geographies for sustained agent workloads.
+- Whether model output vs input split is consistently applied across vendor invoicing for complex agent workloads that intermix tool tokens.
+
+### Draft implications
+- Use OpenAI pricing as a canonical example for component mapping (token input/output, tool calls, containers) and for constructing conservative worked examples. Flag regional/residency uplift and multi-component token accounting as procurement caveats.
+
+
+## Source: Anthropic (Claude) — Pricing (Claude API docs)
+- URL: https://platform.claude.com/docs/en/about-claude/pricing
+- Why this source matters: Official pricing lines for Claude models and agent tooling (prompt caching multipliers, tool pricing, code execution allowances) directly inform per-platform cost breakdowns and highlight vendor-specific primitives such as free container-hour allowances and per-search web costs.
+- Reliability tier: primary (vendor pricing page)
+- Date accessed: 2026-03-20
+
+### Evidence extracted
+- Claim or data point: Claude Opus 4.6 example pricing: Base input $5 / MTok; Output $25 / MTok (Opus 4.6). Web search tool: $10 per 1,000 searches. Code-execution/container: 1,550 free container hours per organization; beyond that billing at $0.05 per hour, per container. Prompt caching multipliers and long-context premium tiers documented; regional endpoint premium (10%) for some models when using regional endpoints.
+  - Support: Claude "Model pricing" table, Tool use pricing, and Code execution tool sections on the Claude Pricing page.
+  - Intended section(s): document/sections/04-component-costs.md (component mapping); document/sections/05-platform-cost-breakdowns.md (worked examples A and B using published rates).
+  - Confidence: high
+
+### Open questions
+- How free container-hour allowances translate for multi-team enterprise accounts and whether they are pro-rated by workspace or org.
+- Volume discounts and how prompt caching multipliers interplay with batch discounts in large-scale agent deployments.
+
+### Draft implications
+- Use Anthropic pricing to show how vendor-level safety/compute concessions (free container hours) materially reduce marginal runtime costs for code-execution-heavy agents; surface prompt-caching and batch discounts as levers for cost optimization.

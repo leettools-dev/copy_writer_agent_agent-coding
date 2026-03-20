@@ -6,7 +6,7 @@
     "source": "internet",
     "source_url": "https://resources.anthropic.com/hubfs/2026%20Agentic%20Coding%20Trends%20Report.pdf",
     "path": "references/selected_example.md",
-    "notes": "Anthropic 2026 Agentic Coding Trends Report selected as structural exemplar; complemented with vendor pricing pages and independent analyses. Section 04 updated with a sourced component taxonomy and a compact vendor-mapped table (2026-03-20)."
+    "notes": "Anthropic 2026 Agentic Coding Trends Report selected as structural exemplar; complemented with vendor pricing pages and independent analyses. Section 04 contains a sourced component taxonomy and a vendor-mapped table. Section 05 now includes worked examples computed strictly from published pricing lines (2026-03-20)."
   },
   "sections": [
     {
@@ -29,9 +29,8 @@
       "file": "document/sections/03-top5-platforms.md",
       "status": "done",
       "summary": "Listings and short profiles of the top 5 platforms, with direct pricing links and a cost breakdown plan.",
-      "evidence_plan": "Use vendor pricing pages (OpenAI, Anthropic, Google, GitHub/Copilot, Cursor/Replit) and vendor docs.",
-      "table_plan": "Create a table listing each platform, core components, and pricing URL.",
-      "notes": "Section 02 completed: capability mapping and features matrix. Section 03 has been updated with representative public figures and direct pricing links."
+      "evidence_plan": "Use vendor pricing pages (OpenAI, Anthropic, Google, GitHub/Copilot, Cursor) and vendor docs.",
+      "table_plan": "Create a table listing each platform, core components, and pricing URL."
     },
     {
       "section_id": "04-component-costs",
@@ -39,8 +38,7 @@
       "file": "document/sections/04-component-costs.md",
       "status": "done",
       "summary": "Define components (model tokens, tool calls, container sessions, storage, IDE seats) and show typical cost ranges.",
-      "table_plan": "Table of component definitions and mapping to pricing lines; candidate data source: OpenAI pricing page as canonical example.",
-      "notes": "Section updated 2026-03-20 with a sourced component table mapping each component to a canonical vendor pricing line (OpenAI, Anthropic, Google, GitHub, Cursor). Section marked done after audit: contains vendor-traceable lines, a compact mapping table, and buyer implications. Remaining verification: validate representative workload totals in Section 05."
+      "table_plan": "Component cost taxonomy table (component, unit, typical published price, source link)."
     },
     {
       "section_id": "05-platform-cost-breakdowns",
@@ -48,7 +46,7 @@
       "file": "document/sections/05-platform-cost-breakdowns.md",
       "status": "done",
       "summary": "Per-platform detailed cost breakdowns with direct citations to public pricing pages.",
-      "evidence_plan": "Gather official pricing pages; avoid estimating unlisted costs; where data missing, record gaps."
+      "evidence_plan": "Gather official pricing pages; avoid estimating unlisted costs; where data missing, record gaps. Worked examples A (30-min session) and B (6-hr run) computed from published lines."
     },
     {
       "section_id": "06-opportunities-and-breakthroughs",
@@ -81,12 +79,12 @@
     {
       "instruction": "We need to have the most important components (and their cost) in the agentic coding products.",
       "status": "pass",
-      "notes": "Section 04 defines components and maps canonical vendor pricing lines (OpenAI, Anthropic, Google, GitHub, Cursor) and has been marked done after audit."
+      "notes": "Section 04 defines components and maps canonical vendor pricing lines (OpenAI, Anthropic, Google, GitHub, Cursor)."
     },
     {
       "instruction": "We need to have detailed cost breakdown for every top agentic coding platform (with direct source to their public pricing page).",
       "status": "pass",
-      "notes": "Section 05 completed using published vendor pricing pages and explicit worked examples. Remaining evidence gaps flagged: seat-first vendor pass-through token rates and enterprise-negotiated discounts (enterprise-only)."
+      "notes": "Section 05 completed using published vendor pricing pages and explicit worked examples. Gaps (seat-pass-through, enterprise discounts) are flagged for procurement follow-up."
     }
   ]
 }
