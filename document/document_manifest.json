@@ -1,0 +1,90 @@
+{
+  "document_title": "Next Breakthroughs in Agentic Coding: Technologies, Market Trends, and Costing",
+  "document_type": "market-research/trends-report",
+  "reference": {
+    "mode": "discovered",
+    "source": "internet",
+    "source_url": "https://resources.anthropic.com/hubfs/2026%20Agentic%20Coding%20Trends%20Report.pdf",
+    "path": "references/selected_example.md",
+    "notes": "Anthropic 2026 Agentic Coding Trends Report selected as structural exemplar; complemented with vendor pricing pages and independent analyses."
+  },
+  "sections": [
+    {
+      "section_id": "01-executive-summary",
+      "title": "Executive summary and key findings",
+      "file": "document/sections/01-executive-summary.md",
+      "status": "pending",
+      "summary": "Topline findings, recommended action areas, and the five candidate breakthrough points."
+    },
+    {
+      "section_id": "02-landscape",
+      "title": "Agentic coding landscape: platforms, models, and developer workflows",
+      "file": "document/sections/02-landscape.md",
+      "status": "pending",
+      "summary": "Map of current platforms, agent capabilities, and how developers use agentic workflows."
+    },
+    {
+      "section_id": "03-top5-platforms",
+      "title": "Top five agentic-coding platforms — feature and cost overview",
+      "file": "document/sections/03-top5-platforms.md",
+      "status": "pending",
+      "summary": "Listings and short profiles of the top 5 platforms, with direct pricing links and a cost breakdown plan.",
+      "evidence_plan": "Use vendor pricing pages (OpenAI, Anthropic, Google, GitHub/Copilot, Cursor/Replit) and vendor docs.",
+      "table_plan": "Create a table listing each platform, core components, and pricing URL."
+    },
+    {
+      "section_id": "04-component-costs",
+      "title": "Important components and per-component cost taxonomy",
+      "file": "document/sections/04-component-costs.md",
+      "status": "pending",
+      "summary": "Define components (model tokens, tool calls, container sessions, storage, IDE seats) and show typical cost ranges.",
+      "table_plan": "Table of component definitions and mapping to pricing lines; candidate data source: OpenAI pricing page as canonical example."
+    },
+    {
+      "section_id": "05-platform-cost-breakdowns",
+      "title": "Detailed cost breakdowns for each top platform",
+      "file": "document/sections/05-platform-cost-breakdowns.md",
+      "status": "pending",
+      "summary": "Per-platform detailed cost breakdowns with direct citations to public pricing pages.",
+      "evidence_plan": "Gather official pricing pages; avoid estimating unlisted costs; where data missing, record gaps."
+    },
+    {
+      "section_id": "06-opportunities-and-breakthroughs",
+      "title": "Where the next breakthroughs will come from",
+      "file": "document/sections/06-opportunities-and-breakthroughs.md",
+      "status": "pending",
+      "summary": "Synthesize technical and market trends to identify top-five breakthrough areas with rationale and trade-offs."
+    },
+    {
+      "section_id": "07-risks-and-governance",
+      "title": "Risks, governance, and adoption considerations",
+      "file": "document/sections/07-risks-and-governance.md",
+      "status": "pending",
+      "summary": "Security, safety, compliance, and organizational adoption barriers."
+    },
+    {
+      "section_id": "08-recommendations",
+      "title": "Recommendations for product teams and investors",
+      "file": "document/sections/08-recommendations.md",
+      "status": "pending",
+      "summary": "Concrete next steps, prioritized experiments, and suggested KPIs."
+    }
+  ],
+  "special_instructions": [
+    {
+      "instruction": "Top five agentic-coding platforms must be listed.",
+      "status": "pending",
+      "notes": "Section 03 will fulfill this. Candidate platforms: OpenAI Codex/GPTs, Anthropic Claude Code, Google Antigravity/Gemini, GitHub Copilot/Code Assistants, Cursor/IDE-native agents."
+    },
+    {
+      "instruction": "List most important components and their cost.",
+      "status": "pending",
+      "notes": "Section 04 maps components; Section 05 will show per-platform prices."
+    },
+    {
+      "instruction": "Provide detailed cost breakdown for every top platform with direct source links.",
+      "status": "pending",
+      "notes": "Section 05 will collect vendor pricing pages and cite them."
+    }
+  ]
+}

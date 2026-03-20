@@ -1,0 +1,52 @@
+[
+  {
+    "id": "anthropic-2026-agentic-coding-report",
+    "title": "2026 Agentic Coding Trends Report",
+    "source": "Anthropic / resources.anthropic.com",
+    "url": "https://resources.anthropic.com/hubfs/2026%20Agentic%20Coding%20Trends%20Report.pdf",
+    "why_candidate": "Directly targeted research report on agentic coding trends; full-length PDF with structured analysis and case studies; high relevance to our document type.",
+    "strengths": ["Topical focus on agentic coding", "Likely data-driven, with case studies", "Good structural model for a trends report"],
+    "weaknesses": ["Proprietary viewpoint from a vendor", "PDF text extraction may be partial without OCR"],
+    "score": 9.2
+  },
+  {
+    "id": "google-gemini-3-blog",
+    "title": "A new era of intelligence with Gemini 3",
+    "source": "Google Blog",
+    "url": "https://blog.google/products-and-platforms/products/gemini/gemini-3/",
+    "why_candidate": "Product + trends narrative from a leading platform provider that explicitly frames agentic coding, agentic development platform (Antigravity), and developer tooling; strong for product/feature framing and vendor positioning.",
+    "strengths": ["Authoritative (Google)", "Clear product framing (Gemini 3, Antigravity)", "Good examples and claims and timeline"],
+    "weaknesses": ["Vendor marketing tone", "Less neutral analysis than an independent report"],
+    "score": 8.1
+  },
+  {
+    "id": "openai-pricing-and-agents-docs",
+    "title": "OpenAI API — Pricing and Agents guides",
+    "source": "OpenAI Developers",
+    "url": "https://developers.openai.com/api/docs/pricing/",
+    "why_candidate": "Contains concrete pricing tables for models and agentic tools (Codex, tool calls, containers) which we must cite for cost breakdowns; strong source for cost data.",
+    "strengths": ["Public pricing data", "Model-level token costs, tool call and container costs"],
+    "weaknesses": ["Focused on OpenAI's stack; not a trends analysis report"],
+    "score": 8.5
+  },
+  {
+    "id": "deloitte-agentic-ai-tech-trends-2025-2026",
+    "title": "The agentic reality check: Preparing for a silicon-based workforce",
+    "source": "Deloitte Insights",
+    "url": "https://www.deloitte.com/us/en/insights/topics/technology-management/tech-trends/2026/agentic-ai-strategy.html",
+    "why_candidate": "Independent industry analysis about agentic AI and organizational implications; useful for market trends, adoption rates, and risks framing.",
+    "strengths": ["Independent analysis", "Organizational focus and adoption guidance"],
+    "weaknesses": ["Less product-level detail and pricing"],
+    "score": 7.4
+  },
+  {
+    "id": "thenewstack-ai-engineering-trends-2025",
+    "title": "AI Engineering Trends in 2025: Agents, MCP and Vibe Coding",
+    "source": "The New Stack",
+    "url": "https://thenewstack.io/ai-engineering-trends-in-2025-agents-mcp-and-vibe-coding/",
+    "why_candidate": "Technical-community-oriented article synthesizing developer-facing trends (agents, MCP, vibe coding); good for developer UX and tooling practice examples.",
+    "strengths": ["Developer-focused perspective", "Practical examples and tool mentions"],
+    "weaknesses": ["Not a formal report; journalistic tone"],
+    "score": 6.6
+  }
+]
