@@ -5,7 +5,7 @@
 - Reference ready: yes
 - Outline ready: yes
 - Compiled ready: yes
-- Sections complete: 5/8
+- Sections complete: 6/8
 - Special instructions resolved: 2/3
 - Overall complete: no
 
@@ -21,7 +21,7 @@
 - [x] Top five agentic-coding platforms — feature and cost overview (document/sections/03-top5-platforms.md)
 - [x] Important components and per-component cost taxonomy (document/sections/04-component-costs.md)
 - [x] Detailed cost breakdowns for each top platform (document/sections/05-platform-cost-breakdowns.md)
-- [ ] Where the next breakthroughs will come from (document/sections/06-opportunities-and-breakthroughs.md)
+- [x] Where the next breakthroughs will come from (document/sections/06-opportunities-and-breakthroughs.md)
 - [ ] Risks, governance, and adoption considerations (document/sections/07-risks-and-governance.md)
 - [ ] Recommendations for product teams and investors (document/sections/08-recommendations.md)
 
@@ -34,5 +34,5 @@
 ## Issues
 
 - missing or empty section files: document/sections/07-risks-and-governance.md, document/sections/08-recommendations.md
-- incomplete sections: Where the next breakthroughs will come from, Risks, governance, and adoption considerations, Recommendations for product teams and investors
+- incomplete sections: Risks, governance, and adoption considerations, Recommendations for product teams and investors
 - unresolved special instructions: We need to have detailed cost breakdown for every top agentic coding platform (with direct soruce to their public pricing page).
