@@ -68,6 +68,13 @@
       "file": "document/sections/08-recommendations.md",
       "status": "done",
       "summary": "Concrete next steps, prioritized experiments, and suggested KPIs."
+    },
+    {
+      "section_id": "09-latest-news-2026",
+      "title": "Latest news (2026): fast-moving developments that matter",
+      "file": "document/sections/09-latest-news-2026.md",
+      "status": "done",
+      "summary": "Concise captures of vendor model releases, governance moves, and market changes in 2026 that affect short-term priorities and cost calculations."
     }
   ],
   "special_instructions": [

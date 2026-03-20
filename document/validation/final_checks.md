@@ -5,7 +5,7 @@
 - Reference ready: yes
 - Outline ready: yes
 - Compiled ready: yes
-- Sections complete: 8/8
+- Sections complete: 9/9
 - Special instructions resolved: 3/3
 - Overall complete: yes
 
@@ -24,10 +24,11 @@
 - [x] Where the next breakthroughs will come from (document/sections/06-opportunities-and-breakthroughs.md)
 - [x] Risks, governance, and adoption considerations (document/sections/07-risks-and-governance.md)
 - [x] Recommendations for product teams and investors (document/sections/08-recommendations.md)
+- [x] Latest news (2026): fast-moving developments that matter (document/sections/09-latest-news-2026.md)
 
 ## Compilation
 
-- Sections written: 8/8
+- Sections written: 9/9
 - Missing files: none
 - Empty files: none
 
