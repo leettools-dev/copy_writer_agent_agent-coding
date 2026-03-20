@@ -49,9 +49,9 @@ Core components (definitions, canonical unit, vendor examples, and buyer implica
 6) Priority / realtime tiers and reserved capacity
 - Unit: percentage uplift on base per-token or flat reservation fees / reserved throughput
 - Vendor examples (public):
-  - OpenAI: priority/"priority" model tiers and regional processing uplifts are listed (priority tiers have higher per‑1M rates). (OpenAI pricing)
-  - Anthropic: fast mode example (6x standard rates for Opus fast mode) and regional endpoint multipliers described. (Anthropic pricing)
-- Buyer implication: Low-latency interactive experiences and enterprise SLAs require paid priority/reserved capacity. These are predictable uplifts but can double-to‑multiply effective per-token costs depending on required SLA.
+  - OpenAI: priority/accelerated tiers and regional processing uplifts are listed (priority tiers have higher per‑1M rates). (OpenAI pricing)
+  - Anthropic: fast mode example (explicit higher-rate "fast" tiers) and regional endpoint multipliers described. (Anthropic pricing)
+- Buyer implication: Low-latency interactive experiences and enterprise SLAs require paid priority/reserved capacity. These are predictable uplifts but can double or multiply effective per-token costs depending on required SLA.
 
 Component-to-vendor mapping (auditable examples — source links included)
 
@@ -70,7 +70,7 @@ Component-to-vendor mapping (auditable examples — source links included)
 
 Notes on the table and remaining public-data gaps
 - Each numeric example maps to a single vendor pricing row so readers can audit the source. Source URLs and access dates are recorded above and in Research Notes.
-- Gaps: seat-first vendors (Cursor, GitHub Copilot in some enterprise configurations) do not publish pass-through per-token rates; we do not invent these pass-through figures. We label those rows "vendor-managed resale — gap" and show worked examples in Section 05 that combine seat fees with conservative token/container assumptions.
+- Gaps: seat-first vendors (Cursor, GitHub Copilot in some enterprise configurations) do not publish pass-through per-token rates; we do not invent these pass-through figures. We label those rows "vendor-managed resale — gap" and will show worked examples in Section 05 that combine seat fees with conservative token/container assumptions.
 - Enterprise-negotiated discounts and committed-use contracts are out of scope for public costing. Flagged as enterprise-only gaps.
 
 Short analysis: which components drive costs in typical agentic workflows
@@ -94,6 +94,3 @@ Sources (public pricing pages cited above)
 - Google Gemini pricing: https://ai.google.dev/gemini-api/docs/pricing (last updated 2026-03-18)
 - GitHub Copilot plans: https://docs.github.com/en/copilot/get-started/plans (accessed 2026-03-20)
 - Cursor pricing: https://cursor.com/pricing (accessed 2026-03-20)
-
-Status
-- This section has been upgraded from draft to evidence-backed draft with auditable vendor lines and a clear next step (Section 05 worked examples). Marking for final validation after Section 05 confirms representative totals and clarifies seat-resale gaps.
