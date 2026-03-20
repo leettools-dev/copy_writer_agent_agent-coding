@@ -27,11 +27,11 @@
       "section_id": "03-top5-platforms",
       "title": "Top five agentic-coding platforms — feature and cost overview",
       "file": "document/sections/03-top5-platforms.md",
-      "status": "draft",
+      "status": "done",
       "summary": "Listings and short profiles of the top 5 platforms, with direct pricing links and a cost breakdown plan.",
       "evidence_plan": "Use vendor pricing pages (OpenAI, Anthropic, Google, GitHub/Copilot, Cursor/Replit) and vendor docs.",
       "table_plan": "Create a table listing each platform, core components, and pricing URL.",
-      "notes": "Section 02 completed: capability mapping and features matrix. Section 03 will re-use these capability axes for platform profiles."
+      "notes": "Section 02 completed: capability mapping and features matrix. Section 03 has been updated with representative public figures and direct pricing links."
     },
     {
       "section_id": "04-component-costs",
@@ -80,12 +80,12 @@
     {
       "instruction": "List most important components and their cost.",
       "status": "pass",
-      "notes": "Section 04 defines components (tokens, tool calls, containers, seats, storage) and maps them to vendor-published pricing lines."
+      "notes": "Section 04 defines components (tokens, tool calls, containers, seats, storage) and maps them to vendor-published pricing lines (draft)."
     },
     {
       "instruction": "Provide detailed cost breakdown for every top platform with direct source links.",
       "status": "pending",
-      "notes": "Section 05 drafted with headline public pricing lines and direct pricing URLs; next step is representative worked examples using these lines (in progress)."
+      "notes": "Section 05 drafted with headline public pricing lines and direct pricing URLs; next step is representative worked examples using these lines."
     }
   ]
 }

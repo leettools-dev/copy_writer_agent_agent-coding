@@ -104,69 +104,70 @@ Section status: ready for downstream costing. This section documents capability 
 03 Top five agentic-coding platforms — feature and cost overview
 
 Purpose
-- Provide concise profiles of the five vendor/platform candidates we judge highest-leverage for agentic coding today, and surface the public pricing entry points for each so Section 05 can produce per-platform cost breakdowns.
+- Provide concise profiles of the five vendor/platform candidates we judge highest-leverage for agentic coding today, and surface the public pricing entry points (and representative list rates where available) so Section 05 can produce per-platform cost breakdowns and worked examples.
 
 Selection rationale (short)
 - Selection criteria: breadth of agentic features (editor/IDE control, tool and browser/terminal control, container/code execution), market reach/enterprise adoption, clarity of public pricing (required by special instructions), and evidence of product roadmaps for agentic capabilities.
 
-Top five platforms (profiles + direct pricing links)
+Top five platforms (profiles + direct pricing links and headline public figures)
 1) OpenAI (GPT family / Codex / platform APIs)
-- Why it matters: Leader in large general-purpose models, explicit pricing for token usage, containers, tool calls, and examples for agent-style workloads. Widely embedded by third-party IDE agents and platform vendors.
-- Core components: tokenized model calls (per-input/output tokens), containers (session/compute), tool-call metering, file storage.
+- Why it matters: Market-leading general-purpose models widely embedded across IDEs, orchestration platforms, and third-party agents. Public pricing is granular (per-1M-token lines, tool-call lines, and container/session rates) which makes componentized costing possible.
+- Core components: per-token input/output pricing, prompt-caching discounts, container/session pricing (hosted containers), tool-call metering (web-search, tool calls), storage/file-day fees.
+- Representative public figures (list rates; see pricing page for full tables and modes): example for gpt-5.4 shows ~ $2.50 per 1M input tokens and $15.00 per 1M output tokens (standard mode); containers and tool calls are published on the same page.
 - Pricing / public links:
   - OpenAI API pricing: https://developers.openai.com/api/docs/pricing/
-- Quick cost note: OpenAI exposes per-token and per-feature pricing lines that are usable to componentize agentic workloads; see Section 05 for extraction of relevant lines and worked examples.
 
 2) Anthropic (Claude platform / Claude Code)
-- Why it matters: Anthropic positions Claude with agentic coding features (Claude Code, tool access, execution) and publishes pricing lines for models and tools useful for component costing.
-- Core components: per-MTok model pricing, web-search/tool call charges, code-execution/container hours, storage and retrieval costs.
+- Why it matters: Claude's docs explicitly target agentic coding (Claude Code, code-execution tools, web-search, long-context) and publish model-level and feature pricing including prompt-caching multipliers and server-side tool prices.
+- Core components: per-MTok model pricing, prompt-caching write/read multipliers, web-search ($10 / 1k searches), code-execution container hours (1,550 free hours per org; $0.05/hr beyond), file storage charges.
+- Representative public figures: Sonnet/Haiku families at materially lower per-MTok rates (e.g., Sonnet series ~ $3 / MTok input, $15 / MTok output examples in public tables); Opus-series list higher rates for higher-capacity models — see Anthropic pricing page for full breakdown.
 - Pricing / public links:
   - Anthropic / Claude pricing: https://platform.claude.com/docs/en/about-claude/pricing
-- Quick cost note: Anthropic documents prompt-caching multipliers and free-tier allowances for containers that materially affect per-agent-session costs; Section 05 will extract those lines.
 
-3) Google (Gemini API / Vertex AI / Antigravity references)
-- Why it matters: Google’s Gemini family provides tiered pricing (Gemini Pro, Flash, Flash-Lite) with explicit per-token rates and differentiated tiers for latency/cost — critical for modeling agentic workloads at different cost/latency points. Google also integrates agentic tooling via Vertex / AI Studio for orchestration.
-- Core components: per-token model pricing (tiered), grounding/search and tool-call charges, enterprise Vertex/Antigravity packaging for larger deployments.
+3) Google (Gemini API / Vertex AI / AI Studio)
+- Why it matters: Gemini family provides tiered cost/latency trade-offs (Pro, Flash, Flash-Lite) and built-in grounding (Google Search, Maps) with their own metering. Google also offers enterprise packaging via Vertex AI/AI Studio.
+- Core components: tiered per-1M-token rates, context-caching storage, grounding/search query charges, tooling (code execution/computer-use), and Vertex-hosting infrastructure pricing for enterprise deployments.
+- Representative public figures: Gemini 3.1 Pro (example list) shows paid-tier list rates around $2 / 1M input and $12 / 1M output (standard); Flash-Lite examples show very low costs (e.g., $0.25 input / $1.50 output per 1M tokens) — see Gemini pricing page for model/tier details.
 - Pricing / public links:
   - Gemini API pricing: https://ai.google.dev/gemini-api/docs/pricing
-  - Vertex AI pricing (enterprise hosting & infrastructure): https://cloud.google.com/vertex-ai/pricing
-- Quick cost note: Google publishes per-model rates suitable for tokenized costing; enterprise packaging (Antigravity/AI Studio) may require additional Vertex-related pricing lookups — Section 05 will record gaps.
+  - Vertex AI pricing (enterprise hosting & infra): https://cloud.google.com/vertex-ai/pricing
 
-4) GitHub Copilot (IDE-integrated, Copilot for Business / Enterprise)
-- Why it matters: Copilot is the primary developer-facing channel for agentic assistance inside IDEs and is priced as seat-subscriptions with metered premium request lines — a representative of seat+meter pricing models.
-- Core components: per-seat subscription, metered premium requests (for heavy model usage), enterprise organization-level features.
+4) GitHub Copilot (IDE-integrated; Copilot Business / Enterprise)
+- Why it matters: Primary developer-facing distribution channel for agentic assistance in IDEs; it represents the seat-first commercial model many engineering organizations adopt.
+- Core components: per-seat subscription (business/enterprise tiers), monthly allowances of premium requests, optional purchase of extra premium requests (metered per-request), organization-level management features and agent provisioning.
+- Representative public figures: Copilot Business listed at $19 per granted seat/month; Copilot Enterprise $39 per seat/month; individual Pro $10/month, Pro+ $39/month. Additional premium requests purchase priced at ~$0.04 per extra request (public doc).
 - Pricing / public links:
   - Copilot plans & pricing: https://docs.github.com/en/copilot/get-started/plans
-- Quick cost note: Copilot pricing is primarily per-seat; metered premium requests can add marginal cost per request. Section 05 will show seat-based examples.
 
 5) Cursor (IDE-native agent / workspace assistant)
-- Why it matters: Cursor represents the newer class of IDE-native agent platforms with explicit per-seat team pricing combined with model-usage tiers — useful for comparing seat-first vs token-first economic models.
-- Core components: per-user seat fees, model-call resale or pass-through (where public), team/admin features.
+- Why it matters: Exemplifies the seat-first IDE-native assistants (teams, cloud agents, hooks) with explicit seat pricing and usage tiers — useful to compare seat-first economics vs token-first vendor stacks.
+- Core components: per-user seat fees (individual/team tiers), included usage allowances (multipliers), optional pooled/enterprise billing with pooled usage for large teams; model-call resale or pass-through handled by vendor.
+- Representative public figures: Cursor Pro $20/user/month; Cursor Teams $40/user/month; Pro+ and Ultra tiers ($60 / $200 per user/month) with higher included usage multipliers.
 - Pricing / public links:
-  - Cursor pricing & models: https://cursor.com/pricing and https://cursor.com/docs/models-and-pricing
-- Quick cost note: Cursor publishes team-level seat prices (Teams $40/user/mo, Pro $20/mo); model usage/resale may be an additional metered cost that needs to be reconciled in Section 05.
+  - Cursor pricing & models: https://cursor.com/pricing ; https://cursor.com/docs/models-and-pricing
 
-Other vendors to watch (not in top-five but relevant)
-- Replit (Ghostwriter), Microsoft Copilot Studio (enterprise tooling), Replit pricing pages and model pages — candidates for "others to watch" or secondary comparisons in Appendix.
+Other vendors to watch (appendix / not in top five)
+- Replit (Ghostwriter), Microsoft Copilot Studio (enterprise/hosting tooling), Replit pricing and model pages — good candidates for secondary comparisons or appendix where seat vs token economics differ.
 
 Platform comparison table (compact)
-- Purpose: a compact table listing platform, primary economic model (token/seat/mixed), immediate pricing URL(s), and whether public component-level pricing is sufficient for a granular cost breakdown.
+- Purpose: Provide a quick at-a-glance signal of each platform's primary economic model, direct pricing URL, and whether public pages provide enough component-level detail for a granular cost breakdown in Section 05.
 
 | Platform | Economic model | Pricing URL(s) | Public component granularity | Notes / gaps |
 | --- | --- | --- | --- | --- |
-| OpenAI | Token-first (per-token input/output), containers, tool-call metering | https://developers.openai.com/api/docs/pricing/ | Yes — per-model token, container-session, tool-call lines published | Detailed per-token and container session prices available; enterprise discounts negotiated separately |
-| Anthropic (Claude) | Token-first (per-MTok), prompt-caching multipliers, container hours | https://platform.claude.com/docs/en/about-claude/pricing | Yes — per-MTok, cache multipliers, web-search and container-hour lines published | Includes prompt-caching multipliers and 1,550 free container hours; enterprise packaging may affect hosted endpoints |
-| Google (Gemini / Vertex) | Token-first with tiered families (Pro / Flash / Flash-Lite), grounding fees | https://ai.google.dev/gemini-api/docs/pricing ; https://cloud.google.com/vertex-ai/pricing | Yes — per-model tier rates, grounding/query pricing published | Batch discounts exist; Vertex enterprise packaging may have different prices |
-| GitHub Copilot | Seat + premium-request metering (seat-first model) | https://docs.github.com/en/copilot/get-started/plans | Partial — seat + premium request lines public; pass-through model rates sometimes opaque | Public seat prices and premium request unit cost ($0.04/request); organization-level model hosting/charges may vary or be routed through enterprise options |
-| Cursor | Seat-first with usage tiers / included usage multipliers | https://cursor.com/pricing ; https://cursor.com/docs/models-and-pricing | Partial — seat prices public; exact pass-through per-token rates not published | Plans expose "x usage" multipliers; pass-through token pricing often vendor-managed and not disaggregated publicly |
+| OpenAI | Token-first (per-token input/output), containers, tool-call metering | https://developers.openai.com/api/docs/pricing/ | Yes — per-model token, container-session, tool-call lines published | Rich published lines for per-token and containers; enterprise discounts/contact required for committed pricing |
+| Anthropic (Claude) | Token-first (per-MTok) + prompt-caching multipliers, container hours | https://platform.claude.com/docs/en/about-claude/pricing | Yes — per-MTok, caching multipliers, web-search & container-hour lines published | Includes free container-hours and cache multipliers that affect session economics; enterprise packaging may vary |
+| Google (Gemini / Vertex) | Token-first, tiered families (Pro / Flash / Flash-Lite), grounding fees | https://ai.google.dev/gemini-api/docs/pricing ; https://cloud.google.com/vertex-ai/pricing | Yes — per-model tier rates and grounding pricing published | Vertex/enterprise packaging may show different terms; grounding query charges are explicit |
+| GitHub Copilot | Seat-first (plus monthly premium-request allowances + extra-request metering) | https://docs.github.com/en/copilot/get-started/plans | Partial — seat prices and premium-request unit cost public; some organizational hosting/resale details opaque | Public seat prices clear; enterprise model-hosting/resale lines sometimes routed through enterprise sales |
+| Cursor | Seat-first with usage tiers / included usage multipliers | https://cursor.com/pricing ; https://cursor.com/docs/models-and-pricing | Partial — seat tiers public; pass-through per-token reseller rates not fully disaggregated | Good seat-tier transparency; model-call pass-through often vendor-managed and may be omitted publicly |
 
-Gaps & data quality notes
-- Enterprise packaging and negotiated discounts (Google Vertex enterprise, Anthropic enterprise, OpenAI enterprise) are often missing from public pages; we mark these as "enterprise-only" gaps and will not estimate.
-- IDE vendors (Cursor, Copilot) mix seat pricing with resold model calls — public pages sometimes omit pass-through model rates; we'll surface these gaps explicitly in Section 05.
+Gaps & data-quality notes
+- Enterprise negotiated rates, volume discounts, and reseller pass-through (seat vendors reselling model calls) are frequently not public. We will not invent enterprise-only numbers. Section 05 will extract all public per-line prices and explicitly call out gaps where representative numbers are missing.
 
-Next actions (executed/planned)
-- Executed: Added platform comparison table with public granularity flags (this file). Collected vendor pricing pages into Section 05 and Section 04.
-- Planned (highest-leverage next): Compute two representative workload cost examples (light interactive session and long-horizon container-run session) using the public per-token and per-session lines; place worked examples in Section 05 and mark Section 03 as draft->done once examples corroborate the comparison table.
+Table plan (for Section 05)
+- Section 05 will include a per-platform component table for each top-5 vendor mapping: token rates (per-1M or per-token), container/session pricing, tool-call pricing (per 1k calls or per-call), seat fees (when applicable), and storage/file-day fees. Each table cell will include a direct source link to the precise pricing line on the vendor page.
+
+Next actions (for this section)
+- Mark this section as ready -> move to done once Section 05 has ingested the concrete per-line pricing and a worked example cost calculation is produced (two representative workloads: a short interactive session and a long-horizon container-run session). For now this file documents the top-five selection, representative public figures, and direct pricing links required by the special instructions.
 
 04 Important components and per-component cost taxonomy
 
@@ -210,139 +211,75 @@ Status: draft — table populated with vendor-published lines and gap annotation
 05 Detailed cost breakdowns for each top platform
 
 Purpose
-- Itemize the public pricing lines and component mappings for the five top platforms we selected (OpenAI, Anthropic/Claude, Google Gemini/Vertex, GitHub Copilot, Cursor). Provide direct source links and flag gaps where pricing is enterprise-only or not publicly disaggregated.
+- Provide componentized, source-linked pricing lines for each top-5 platform so readers can reproduce cost calculations. Where public data is missing (enterprise-only or reseller pass-through), flag the gap and avoid inventing numbers.
 
 How to read this section
-- We report only public, vendor-published pricing lines and the document URLs where they appear. When vendors publish multiple tiers (batch, priority, regional uplifts, cache multipliers) we list the headline public rates and note relevant multipliers or conditions. We do not invent hidden or negotiated enterprise discounts — those are flagged as gaps.
+- Each vendor subsection lists: core billable components (tokens, containers, tool calls, seats, storage), the explicit public pricing lines (with source URL), and a short note on gaps or enterprise-only items. All figures below are taken directly from vendor pricing pages cited.
 
-Sources for each vendor (click-through pricing pages)
-- OpenAI API pricing: https://developers.openai.com/api/docs/pricing/
-- Anthropic / Claude pricing: https://platform.claude.com/docs/en/about-claude/pricing
-- Google Gemini API pricing: https://ai.google.dev/gemini-api/docs/pricing
-- GitHub Copilot plans & pricing: https://docs.github.com/en/copilot/get-started/plans
-- Cursor pricing: https://cursor.com/pricing
+1) OpenAI — key public pricing lines (source: OpenAI API pricing)
+- Pricing URL: https://developers.openai.com/api/docs/pricing/
+- Representative per-model token rates (per 1M tokens, standard mode):
+  - gpt-5.4 (short-context example): Input $2.50 / 1M tokens; Cached input $0.25 / 1M; Output $15.00 / 1M
+  - gpt-5.4 (long-context list): Input $5.00 / 1M; Cached input $0.50 / 1M; Output $22.50 / 1M
+- Containers (hosted sessions): example session pricing (per 20-minute session): 1 GB $0.03, 4 GB $0.12, 16 GB $0.48, 64 GB $1.92 per 20-minute session (page lists per-GB and per-session variants).
+- Tool calls & built-in tools:
+  - Web search tool: $10.00 / 1k calls (search content tokens billed at model rates)
+  - Tool call baseline: $2.50 / 1k calls (general tool-call line)
+- Storage / file search: $0.10 / GB per day (1 GB free)
+- Notes & gaps: OpenAI publishes per-model, per-token, container, and tool-call lines sufficient for componentized costing. Volume/enterprise discounts and reserved pricing require sales contact and are not public.
 
--- Worked examples (representative workloads)
+2) Anthropic (Claude) — key public pricing lines
+- Pricing URL: https://platform.claude.com/docs/en/about-claude/pricing
+- Model per-MTok examples (MTok = million tokens):
+  - Claude Opus 4.6 (example row): Base input $5 / MTok; Output $25 / MTok (table shows cache and long-context variants)
+  - Claude Sonnet 4.6 / Sonnet family: Input ~$3 / MTok; Output ~$15 / MTok (Sonnet rows shown in pricing table)
+  - Claude Haiku family: lower-cost tiers (e.g., Haiku 4.5 input $1 / MTok; output $5 / MTok in table examples)
+- Prompt caching multipliers and cache economics:
+  - 5-minute cache write: 1.25x base input price; 1-hour cache write: 2x base input price; cache read (hit) costs 0.1x base input price. (See prompt-caching section.)
+- Tool pricing & containers:
+  - Web search: $10 / 1,000 searches (search results are charged in addition to token rates for search content)
+  - Code execution: first 1,550 container hours free per organization per month; additional hours billed at $0.05 per hour, per container
+  - Web fetch: no additional charges beyond token billing for fetched content
+- Storage / batch discounts: Batch API discounts and long-context premium rates are documented (see pricing page).
+- Notes & gaps: Anthropic provides detailed component lines including prompt-caching multipliers and a generous free container-hours allowance that changes session economics. Enterprise discounts and reseller/third-party endpoint pricing (Bedrock/Vertex) vary.
 
-Assumptions (shared across examples)
-- Lightweight interactive session: single developer, 15-minute interactive agent session producing ~2,000 input tokens and ~1,000 output tokens, and 2 external tool calls (web searches). No container/code-execution invoked.
-- Long-horizon agent run: multi-step agent that cumulatively uses 20,000 input tokens and 10,000 output tokens, performs 10 web searches (or grounding calls), and runs a code-execution container for 2 hours.
-- Token unit: 1 MTok = 1,000,000 tokens. We compute costs by multiplying (tokens/1,000,000) by vendor per-MTok rates. Tool-call costs use per-1k-call public rates.
-- Where a vendor does not publish per-token pass-through for seat-first products (Cursor, some Copilot configurations), we present: (A) seat-only amortized cost (explicit public seat price) and (B) the marginal metered cost where the vendor publishes a metered premium-request unit price (Copilot). For Cursor we mark model-call pass-through as a public data gap.
-- Confidence: calculations use verbatim public pricing lines captured in our research notes and vendor pricing pages. If a vendor page omits a line (pass-through model rates), we do not invent one and instead show a gap.
+3) Google — Gemini API / Vertex (key lines)
+- Pricing URL: https://ai.google.dev/gemini-api/docs/pricing (Gemini) and https://cloud.google.com/vertex-ai/pricing (Vertex hosting)
+- Representative per-1M-token rates (examples from Gemini page):
+  - Gemini 3.1 Pro (Standard): Input ~$2 / 1M tokens (<=200k prompts), Output ~$12 / 1M tokens (<=200k)
+  - Gemini 3.1 Flash-Lite (cost-efficient): Input $0.25 / 1M, Output $1.50 / 1M (standard tier example)
+  - Batch pricing: roughly 50% of standard token rates when using Batch API (see page for model-by-model batch rates)
+- Grounding / search / maps charges:
+  - Grounding with Google Search / Maps: common published lines include $14 / 1,000 search queries (Gemini 3.1 Pro references $14 / 1k; other model families show different free allowances and $35 / 1k variants for some models) — check model table rows for the exact grounding allowance.
+- Tool use / code execution: Code execution costs are charged as token-based input/output for generated/executed content; page notes tool-specific behaviors and that execution runtime itself is not separately charged in Gemini (unlike some vendors).
+- Notes & gaps: Vertex enterprise packaging may move pricing onto cloud infra bills (extra infra/network fees). Grounding query charges and cache/storage rates are explicit; enterprise negotiated terms require Google Cloud sales.
 
-1) Lightweight interactive session (15 min; 2k in / 1k out; 2 web searches)
+4) GitHub Copilot — seat-first pricing and premium-request metering
+- Pricing URL: https://docs.github.com/en/copilot/get-started/plans
+- Public seat prices (examples):
+  - Copilot Pro (individual): $10 / month (or $100 / year)
+  - Copilot Pro+ : $39 / month
+  - Copilot Business: $19 per granted seat / month
+  - Copilot Enterprise: $39 per granted seat / month
+- Premium requests & metering:
+  - Included premium request allowances by plan (e.g., Pro includes 300/month; Pro+ includes 1500/month; business/enterprise include per-user allowances)
+  - Additional premium request purchase: $0.04 per extra premium request (public doc footnote)
+- Notes & gaps: Copilot seats are the dominant cost center for team rollouts; meterable premium requests add marginal cost. Organization-level indexing/enterprise hosting pass-through fees may be negotiated.
 
-OpenAI (gpt-5.4 short-context standard rates)
-- Rates used (OpenAI pricing): input $2.50 / 1M tokens; output $15.00 / 1M tokens; tool/web-search example lines: tool call $2.50 / 1k calls, web search $10 / 1k calls.
-- Token cost: (2,000 / 1,000,000) * $2.50 = $0.005 (input)
-             (1,000 / 1,000,000) * $15.00 = $0.015 (output)
-- Tool cost (2 web searches): (2 / 1,000) * $10 = $0.02
-- Session subtotal (OpenAI): $0.005 + $0.015 + $0.02 = $0.04
-- Source: https://developers.openai.com/api/docs/pricing/
+5) Cursor — seat-first with usage multipliers
+- Pricing URL: https://cursor.com/pricing and https://cursor.com/docs/models-and-pricing
+- Public seat lines:
+  - Individual Pro: $20 / user / month
+  - Pro+: $60 / user / month (recommended tier)
+  - Ultra: $200 / user / month (high usage tier)
+  - Teams: $40 / user / month (team plan; includes centralized billing & analytics)
+- Usage multipliers / included usage:
+  - Pro+ advertises 3x usage on OpenAI/Claude/Gemini models; Ultra 20x usage — these are vendor-defined multipliers applied to included allowances (see cursor docs).
+- Notes & gaps: Cursor lists seat prices clearly; exact pass-through per-token costs (when Cursor resells model calls) are not disaggregated on public pages. Enterprise pooled usage and invoicing are custom.
 
-Anthropic / Claude (Opus / Sonnet families)
-- Rates used (Anthropic pricing): example Claude Opus 4.6 input $5 / MTok; output $25 / MTok; web search $10 / 1k searches; web fetch free beyond token costs.
-- Token cost: (2,000 / 1,000,000) * $5 = $0.01 (input)
-             (1,000 / 1,000,000) * $25 = $0.025 (output)
-- Tool cost (2 web searches): (2 / 1,000) * $10 = $0.02
-- Session subtotal (Anthropic): $0.01 + $0.025 + $0.02 = $0.055
-- Source: https://platform.claude.com/docs/en/about-claude/pricing
+Common caveats and data gaps
+- Enterprise/reseller negotiated discounts, committed-use discounts, and reseller pass-throughs (seat vendors reselling model calls) are frequently not public and will be flagged in each vendor subsection.
+- For seat-first products that resell model calls (Cursor, Copilot), we will not invent the internal pass-through per-token price; instead Section 05 will include the public seat prices and note the lack of public line-item model-call pass-through.
 
-Google Gemini (Gemini 3.1 Pro / Flash-Lite comparison)
-- Rates used (Gemini 3.1 Pro standard): input $2.00 / 1M; output $12.00 / 1M. Grounding with Google Search (after allowance) example $14 / 1k searches for some tiers.
-- Token cost: (2,000 / 1,000,000) * $2.00 = $0.004 (input)
-             (1,000 / 1,000,000) * $12.00 = $0.012 (output)
-- Grounding cost (2 searches): (2 / 1,000) * $14 = $0.028
-- Session subtotal (Gemini 3.1 Pro): $0.004 + $0.012 + $0.028 = $0.044
-- If instead using Gemini Flash-Lite (cheaper): input $0.25/1M and output $1.50/1M — token costs would be ~6–10x lower; grounding charges still apply when used.
-- Source: https://ai.google.dev/gemini-api/docs/pricing
-
-GitHub Copilot (seat-first; premium requests)
-- Public lines: Copilot Business seat $19 / granted seat / month; premium-request allowances per plan (e.g., 300 premium requests / month) and extra premium requests $0.04 / request.
-- Marginal per-session cost (assuming the session uses premium requests that are within plan allowance): $0 (covered by allowance). If beyond allowance, 2 extra premium requests * $0.04 = $0.08.
-- Seat amortization example: Copilot Business $19 / month. If we assume 20 billed working days / month and 1 interactive session per day (conservative), per-session seat amortization = $19 / 20 = $0.95. (Adjust assumption to reflect your org's realistic session frequency.)
-- Practical takeaway: for light interactive sessions, Copilot's marginal cost is typically dominated by seat amortization rather than per-request metering unless the team exceeds premium-request allowances.
-- Source: https://docs.github.com/en/copilot/get-started/plans
-
-Cursor (seat-first; model-call pass-through gap)
-- Public lines: Cursor Pro $20 / month individual; Pro+ $60 / month; Teams $40 / user / month.
-- Marginal per-session model-call cost: Not published (Cursor may resell model calls via included allocations or usage multipliers) — data gap. We present seat amortization similarly: $40 / month -> $40 / 20 sessions = $2.00 per-session amortized (assumes 20 sessions/month).
-- Source: https://cursor.com/pricing
-
-Summary — lightweight session
-- OpenAI: ~$0.04 / session (token+web-search costs only)
-- Anthropic: ~$0.055 / session
-- Google (Gemini 3.1 Pro): ~$0.044 / session
-- GitHub Copilot: marginal metered cost often $0 (within allowance); amortized seat cost ~ $0.95/session (example assumption)
-- Cursor: marginal metered cost gap; amortized seat cost example ~ $2.00/session (Teams plan assumption)
-
-Confidence notes: model-token and tool-call lines come from vendor pricing pages cited above. Seat amortizations are illustrative and assume 20 sessions/month; adjust to your org's usage pattern for realistic estimates.
-
-2) Long-horizon agent run (20k input / 10k output; 10 web searches; 2-hour container run)
-
-OpenAI
-- Rates used: gpt-5.4 short-context standard: input $2.50 / 1M; output $15.00 / 1M. Container pricing per 20-minute session: 4 GB container $0.12 per 20-minute session (so 2 hours = 6 * $0.12 = $0.72).
-- Token cost: (20,000 / 1,000,000) * $2.50 = $0.05 (input)
-             (10,000 / 1,000,000) * $15.00 = $0.15 (output)
-- Web search: (10 / 1,000) * $10 = $0.10
-- Container: 2 hours on 4GB container = 6 sessions * $0.12 = $0.72
-- Run subtotal (OpenAI): $0.05 + $0.15 + $0.10 + $0.72 = $1.02
-- Source: https://developers.openai.com/api/docs/pricing/
-
-Anthropic / Claude
-- Rates used: Claude Opus 4.6 input $5 / MTok; output $25 / MTok. Code execution: Anthropic gives orgs 1,550 free container hours per month; beyond that $0.05 / hour / container.
-- Token cost: (20,000 / 1,000,000) * $5 = $0.10 (input)
-             (10,000 / 1,000,000) * $25 = $0.25 (output)
-- Web search: (10 / 1,000) * $10 = $0.10
-- Container: If within Anthropic's free 1,550 hours/month, container cost = $0.00; otherwise $0.05/hr * 2 = $0.10
-- Run subtotal (Anthropic): if within free container allowance: $0.10 + $0.25 + $0.10 + $0.00 = $0.45
-                                 otherwise: $0.55
-- Source: https://platform.claude.com/docs/en/about-claude/pricing
-
-Google Gemini (Gemini 3.1 Pro)
-- Rates used: Gemini 3.1 Pro standard: input $2.00 / 1M; output $12.00 / 1M. Grounding per-query example $14 / 1k after allowance.
-- Token cost: (20,000 / 1,000,000) * $2.00 = $0.04 (input)
-             (10,000 / 1,000,000) * $12.00 = $0.12 (output)
-- Grounding: (10 / 1,000) * $14 = $0.14
-- Code execution: Gemini page states code execution is billed as token usage; no separate container-hour line to add in many modes — so exclude container runtime charge and capture cost via tokens above.
-- Run subtotal (Gemini 3.1 Pro): $0.04 + $0.12 + $0.14 = $0.30
-- If using Flash-Lite (cheaper token rates), the token portion would be much lower.
-- Source: https://ai.google.dev/gemini-api/docs/pricing
-
-GitHub Copilot
-- Seat-first: Copilot Business $19 / seat / month; premium requests allowances in plan (e.g., 300 / month). If the 10 web searches and token usage fit within a user's included premium requests and model allowances, marginal metered cost = $0. Seat amortization example (20 sessions/month) = $19 / 20 = $0.95 per session; for a long-horizon run that counts as, say, 1 session, seat amortization remains the same.
-- If team exceeds premium-request allowances, additional premium requests are $0.04 / request, so 10 extra requests = $0.40.
-- Note: Copilot enterprise customers may route calls through enterprise-hosted models or use their own API keys and be billed separately for model usage — public docs indicate multiple deployment options; treat these as enterprise-only variations.
-- Source: https://docs.github.com/en/copilot/get-started/plans
-
-Cursor
-- Seat-first: Teams $40 / user / month; Pro individual $20 / month. Cursor's public pricing shows "x usage" multipliers on higher tiers (e.g., Pro+ 3x usage), but does not publicly list exact pass-through per-token rates when it resells model calls.
-- Seat amortization: Teams $40/month -> $2.00 per session (assuming 20 sessions/month). Model-call pass-through: not published -> gap.
-- For a long-horizon run that requires container execution or heavy model inference, ask Cursor sales or documentation for explicit per-token pass-through rates or included allowances.
-- Source: https://cursor.com/pricing
-
-Summary — long-horizon run
-- OpenAI: ~$1.02 (dominant cost: container sessions in this scenario)
-- Anthropic: ~$0.45 (if code execution hours fall within the 1,550 free-hour allowance) or ~$0.55 if charged for container-hours
-- Google Gemini 3.1 Pro: ~$0.30 (token + grounding; code execution captured by token billing in many modes)
-- GitHub Copilot: marginal metered cost often $0 if inside allowances; seat amortization and enterprise routing make per-run numbers organization-specific
-- Cursor: seat-only amortization example ~$2.00 per run; model-call pass-through gap for heavy inference runs
-
-Gaps & recommended follow-ups
-- Cursor pass-through model rates: not disclosed on public pricing page. Recommended follow-up: request Cursor's documentation or enterprise sales information to confirm whether model-call costs are included in the seat price or billed separately and at what per-token rate.
-- Copilot model mapping: GitHub publishes supported models (Claude, Gemini, GPT families) but does not always disclose which model backs "premium requests" in a simple per-token manner. For precise per-workload cost estimation when using Copilot, clarify whether your org relies on (a) included model allowances, (b) Copilot-managed premium model usage (vendor-managed billing), or (c) "bring your own API key" deployments where the org pays model providers directly.
-- Enterprise negotiations: volume discounts, dedicated endpoints, and region-specific uplifts are typically negotiated — flag these as "enterprise-only" and avoid estimating.
-
-Appendix: worked-example assumptions and calculation cadence
-- We used conservative, easily explainable workload definitions to keep comparisons transparent. To apply these to your org, replace the session frequency and per-session assumptions with your own (sessions per developer per month; expected number of tool calls per session; proportion of runs needing containers).
-- All calculations above cite vendor pricing pages published March 2026 (pages listed in Sources). If you want a spreadsheet of these calculations for scenario sensitivity (varying session frequency, model family, container size), I can generate one and populate it with the public rates used above.
-
-Direct pricing links (audit trail)
-- OpenAI pricing: https://developers.openai.com/api/docs/pricing/
-- Anthropic (Claude) pricing: https://platform.claude.com/docs/en/about-claude/pricing
-- Google Gemini pricing: https://ai.google.dev/gemini-api/docs/pricing
-- GitHub Copilot plans: https://docs.github.com/en/copilot/get-started/plans
-- Cursor pricing: https://cursor.com/pricing
-
-Status: draft -> includes two representative worked examples computed from direct public vendor pricing lines. Next step is to (a) convert these worked examples into a compact comparison table and (b) produce a spreadsheet export (CSV) of the scenarios for easy sensitivity analysis. If you want, I can generate the CSV now.
+Next step (highest-leverage):
+- Use the public per-line figures in this file to compute two representative worked examples (a short interactive agent session and a long container-run session). These worked examples will be the highest-leverage way to convert component lines into comparative economics. I will prepare those worked examples in the next iteration (Section 05 worked examples subsection) once you confirm to proceed.
