@@ -82,9 +82,9 @@
       "notes": "Section 04 defines components and maps canonical vendor pricing lines (OpenAI, Anthropic, Google, GitHub, Cursor)."
     },
     {
-      "instruction": "We need to have detailed cost breakdown for every top agentic coding platform (with direct source to their public pricing page).",
+      "instruction": "We need to have detailed cost breakdown for every top agentic coding platform (with direct soruce to their public pricing page).",
       "status": "pass",
-      "notes": "Section 05 completed using published vendor pricing pages and explicit worked examples. Gaps (seat-pass-through, enterprise discounts) are flagged for procurement follow-up."
+      "notes": "Section 05 contains per-platform component line items, representative worked examples computed from published vendor pricing pages (OpenAI, Anthropic, Google, GitHub, Cursor). Any vendor-managed resale or enterprise-only lines are flagged as gaps and linked to the source pricing pages."
     }
   ]
 }
