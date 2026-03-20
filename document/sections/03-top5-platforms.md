@@ -1,60 +1,66 @@
-Section: Top five agentic-coding platforms — feature and cost overview
+03 Top five agentic-coding platforms — feature and cost overview
 
 Purpose
-- Provide the reader a concise list of the leading agentic-coding platforms, a short profile of each (what makes it agentic), and direct links to their public pricing pages so readers can verify costs. This section intentionally summarizes pricing highlights; Section 05 will contain full componentized cost breakdowns with line-by-line citations.
+- Provide concise profiles of the five vendor/platform candidates we judge highest-leverage for agentic coding today, and surface the public pricing entry points for each so Section 05 can produce per-platform cost breakdowns.
 
-Top 5 platforms (shortlist rationale)
-1. OpenAI (GPT / Codex family)
-   - Why it matters: Market-leading generalist models with explicit "Codex"/"Codex-Codex" variants and API features for function-calling, tool use and agent orchestration; widely embedded in third-party IDEs and agent frameworks.
-   - Pricing reference (official): https://developers.openai.com/api/docs/pricing/
-   - Pricing highlights (public): model token pricing, Codex / agent-oriented models listed on the OpenAI pricing page (token-based input/output rates; tool/container pricing such as container GB/session and tool-call charges). See the OpenAI API pricing page for per-model per-1M-token values.
+Selection rationale (short)
+- Selection criteria: breadth of agentic features (editor/IDE control, tool and browser/terminal control, container/code execution), market reach/enterprise adoption, clarity of public pricing (required by special instructions), and evidence of product roadmaps for agentic capabilities.
 
-2. Anthropic (Claude / Claude Code)
-   - Why it matters: Anthropic’s Claude lineup (Haiku, Sonnet, Opus) has explicit agent-support tooling (text editors, computer-use, code-execution tools) and published pricing for prompt caching, cache multipliers, code execution container hours and tool costs — making it practical to cost agent workloads.
-   - Pricing reference (official): https://platform.claude.com/docs/en/about-claude/pricing
-   - Pricing highlights (public): Sonnet/Opus per-MTok input/output rates, prompt-caching multipliers, web-search ($10 / 1k searches) and code-execution container billing (1,550 free hours / org; $0.05/hr beyond), plus file-search and storage lines. See the Claude pricing doc for details.
+Top five platforms (profiles + direct pricing links)
+1) OpenAI (GPT family / Codex / platform APIs)
+- Why it matters: Leader in large general-purpose models, explicit pricing for token usage, containers, tool calls, and examples for agent-style workloads. Widely embedded by third-party IDE agents and platform vendors.
+- Core components: tokenized model calls (per-input/output tokens), containers (session/compute), tool-call metering, file storage.
+- Pricing / public links:
+  - OpenAI API pricing: https://developers.openai.com/api/docs/pricing/
+- Quick cost note: OpenAI exposes per-token and per-feature pricing lines that are usable to componentize agentic workloads; see Section 05 for extraction of relevant lines and worked examples.
 
-3. Google (Gemini API / Google AI Studio / Vertex AI — Antigravity mention)
-   - Why it matters: Google’s Gemini family (Gemini 3 / 3.1 Pro, Flash, Flash‑Lite) is explicitly positioned for agentic and vibe-coding workflows and integrated into Google AI Studio, Vertex AI and the new Antigravity agentic development platform (product narratives emphasize editor/terminal/browser control).
-   - Pricing references (official): Gemini API pricing (developer): https://ai.google.dev/gemini-api/docs/pricing and Vertex AI generative AI pricing: https://cloud.google.com/vertex-ai/generative-ai/pricing
-   - Pricing highlights (public): per-1M-token pricing varies by model tier (Gemini 3.1 Pro: example Input $2/$4 per 1M tokens, Output $12/$18 per 1M depending on context size; Flash/Flash‑Lite much cheaper e.g., Flash‑Lite Input $0.25 / Output $1.50). Grounding (Search/Maps) and tool costs are listed on Gemini pages; Vertex/enterprise pricing and bundling via Vertex may differ (see Vertex page).
+2) Anthropic (Claude platform / Claude Code)
+- Why it matters: Anthropic positions Claude with agentic coding features (Claude Code, tool access, execution) and publishes pricing lines for models and tools useful for component costing.
+- Core components: per-MTok model pricing, web-search/tool call charges, code-execution/container hours, storage and retrieval costs.
+- Pricing / public links:
+  - Anthropic / Claude pricing: https://platform.claude.com/docs/en/about-claude/pricing
+- Quick cost note: Anthropic documents prompt-caching multipliers and free-tier allowances for containers that materially affect per-agent-session costs; Section 05 will extract those lines.
 
-4. GitHub Copilot (Copilot Business / Enterprise)
-   - Why it matters: Copilot is the most widely-adopted IDE-integrated developer assistant. It bundles agent features (agent mode, Copilot coding agent, Copilot CLI, code review) into seat-based licensing — making seat + metered premium-requests a common procurement model for teams adopting agentic coding.
-   - Pricing references (official): Marketing & plans: https://github.com/features/copilot/plans and docs: https://docs.github.com/en/copilot/get-started/plans
-   - Pricing highlights (public): Copilot Business listed at $19 per granted seat per month; Copilot Enterprise at $39 per granted seat per month. Premium-requests are metered (allowances per plan; $0.04 per additional premium request). Copilot mixes seat-subscriptions and metered premium requests for agentic features.
+3) Google (Gemini API / Vertex AI / Antigravity references)
+- Why it matters: Google’s Gemini family provides tiered pricing (Gemini Pro, Flash, Flash-Lite) with explicit per-token rates and differentiated tiers for latency/cost — critical for modeling agentic workloads at different cost/latency points. Google also integrates agentic tooling via Vertex / AI Studio for orchestration.
+- Core components: per-token model pricing (tiered), grounding/search and tool-call charges, enterprise Vertex/Antigravity packaging for larger deployments.
+- Pricing / public links:
+  - Gemini API pricing: https://ai.google.dev/gemini-api/docs/pricing
+  - Vertex AI pricing (enterprise hosting & infrastructure): https://cloud.google.com/vertex-ai/pricing
+- Quick cost note: Google publishes per-model rates suitable for tokenized costing; enterprise packaging (Antigravity/AI Studio) may require additional Vertex-related pricing lookups — Section 05 will record gaps.
 
-5. Cursor (IDE-first, teams-oriented agent platform)
-   - Why it matters: Cursor is an IDE-native agent and cloud-agent platform that packages agents, Tab/Auto features, and cloud agents with clear per-seat pricing; frequently used as a practical, team-oriented agentic coding surface in enterprises and startups.
-   - Pricing reference (official): https://cursor.com/pricing and docs: https://cursor.com/docs/models-and-pricing
-   - Pricing highlights (public): Individual Pro $20 / month; Teams $40 / user / month (seat-based); Pro+ / Ultra tiers for heavier model usage and enterprise pooled/custom pricing. Cursor combines seat subscriptions with metered model usage.
+4) GitHub Copilot (IDE-integrated, Copilot for Business / Enterprise)
+- Why it matters: Copilot is the primary developer-facing channel for agentic assistance inside IDEs and is priced as seat-subscriptions with metered premium request lines — a representative of seat+meter pricing models.
+- Core components: per-seat subscription, metered premium requests (for heavy model usage), enterprise organization-level features.
+- Pricing / public links:
+  - Copilot plans & pricing: https://docs.github.com/en/copilot/get-started/plans
+- Quick cost note: Copilot pricing is primarily per-seat; metered premium requests can add marginal cost per request. Section 05 will show seat-based examples.
 
-Notes on platform selection and boundary decisions
-- Selection criteria used: (1) explicit agentic features (editor/terminal/browser control, tool use), (2) market reach / number of developer integrations (IDE plugins, GitHub integrations), (3) public pricing transparency (must have a public pricing page to cite), and (4) evidence of agent-first product framing (agent SDKs, agent builders, or agentic development surfaces).
-- Other notable vendors to watch (did not make top‑5 for this draft because of narrower reach or less transparent pricing): Replit (Ghostwriter), Microsoft Copilot Studio (bundled in Microsoft 365 Copilot product family), and Reforge/Smaller IDE vendors. These will be included in an "Others to watch" appendix where appropriate.
+5) Cursor (IDE-native agent / workspace assistant)
+- Why it matters: Cursor represents the newer class of IDE-native agent platforms with explicit per-seat team pricing combined with model-usage tiers — useful for comparing seat-first vs token-first economic models.
+- Core components: per-user seat fees, model-call resale or pass-through (where public), team/admin features.
+- Pricing / public links:
+  - Cursor pricing & models: https://cursor.com/pricing and https://cursor.com/docs/models-and-pricing
+- Quick cost note: Cursor publishes team-level seat prices (Teams $40/user/mo, Pro $20/mo); model usage/resale may be an additional metered cost that needs to be reconciled in Section 05.
 
-Most important components buyers pay for (component taxonomy)
-- Model inference (per-token): input tokens and output tokens priced per model (per 1M tokens). Example authoritative sources: OpenAI, Gemini, Anthropic model pages.
-- Tool calls / grounding: charged per call or per-search (e.g., web search calls), sometimes with separate per-call fees (OpenAI/Anthropic list tool-call or search prices; Gemini lists Grounding search pricing).
-- Container / code-execution sessions: billed by session time or per-hour container price (Anthropic lists container execution free hours and per-hour rates; OpenAI lists container pricing per GB/session).
-- Context / prompt caching and storage: prompt-caching multipliers and storage fees (Anthropic and Google/Gemini both publish caching and long-context storage pricing lines).
-- Seats / subscriptions: per-user per-month seat fees for IDE-integrated products (GitHub Copilot, Cursor, enterprise bundles).
-- Add-on services: embeddings, file storage, embeddings-based retrieval, and enterprise features (SAML/SSO, audit logs) that are seat- or usage-priced.
+Other vendors to watch (not in top-five but relevant)
+- Replit (Ghostwriter), Microsoft Copilot Studio (enterprise tooling), Replit pricing pages and model pages — candidates for "others to watch" or secondary comparisons in Appendix.
 
-Next steps (execution plan)
-- Draft Section 05 (per-platform detailed cost breakdowns). For each of the five platforms above we will: (a) list the pricing page(s) URLs, (b) extract the component-level pricing lines and present a small component table, and (c) mark any data gaps that require sales/enterprise quotes. This will fulfill the special-instruction requirement for "detailed cost breakdown for every top agentic coding platform (with direct source to their public pricing page)."
-- If you want me to proceed now, I will draft /workspace/document/sections/05-platform-cost-breakdowns.md and begin the line-by-line extraction for each platform in the order: OpenAI, Anthropic, Google (Gemini / Vertex), GitHub Copilot, Cursor.
+Platform comparison table (compact)
+- Purpose: a compact table listing platform, primary economic model (token/seat/mixed), immediate pricing URL(s), and whether public component-level pricing is sufficient for a granular cost breakdown.
 
-Gaps & caveats to flag immediately
-- Enterprise / negotiated pricing and some tool-specific pass-through charges (e.g., Cursor reselling model calls) are often not fully visible on public pages — where data is missing we will explicitly record the gap and avoid inventing numbers.
-- Google Antigravity is a product announcement (Gemini/Antigravity) — Antigravity-specific pricing was not found on public pages and likely will be bundled into Google AI Studio / Vertex enterprise offerings; will flag this as an enterprise-sales gap in Section 05.
+| Platform | Economic model | Pricing URL(s) | Public component granularity | Notes / gaps |
+| --- | --- | --- | --- | --- |
+| OpenAI | Token-first (per-token input/output), containers, tool-call metering | https://developers.openai.com/api/docs/pricing/ | Yes — per-model token, container-session, tool-call lines published | Detailed per-token and container session prices available; enterprise discounts negotiated separately |
+| Anthropic (Claude) | Token-first (per-MTok), prompt-caching multipliers, container hours | https://platform.claude.com/docs/en/about-claude/pricing | Yes — per-MTok, cache multipliers, web-search and container-hour lines published | Includes prompt-caching multipliers and 1,550 free container hours; enterprise packaging may affect hosted endpoints |
+| Google (Gemini / Vertex) | Token-first with tiered families (Pro / Flash / Flash-Lite), grounding fees | https://ai.google.dev/gemini-api/docs/pricing ; https://cloud.google.com/vertex-ai/pricing | Yes — per-model tier rates, grounding/query pricing published | Batch discounts exist; Vertex enterprise packaging may have different prices |
+| GitHub Copilot | Seat + premium-request metering (seat-first model) | https://docs.github.com/en/copilot/get-started/plans | Partial — seat + premium request lines public; pass-through model rates sometimes opaque | Public seat prices and premium request unit cost ($0.04/request); organization-level model hosting/charges may vary or be routed through enterprise options |
+| Cursor | Seat-first with usage tiers / included usage multipliers | https://cursor.com/pricing ; https://cursor.com/docs/models-and-pricing | Partial — seat prices public; exact pass-through per-token rates not published | Plans expose "x usage" multipliers; pass-through token pricing often vendor-managed and not disaggregated publicly |
 
-Sources cited (quick list of URLs to verify)
-- OpenAI API pricing: https://developers.openai.com/api/docs/pricing/
-- Anthropic / Claude pricing: https://platform.claude.com/docs/en/about-claude/pricing
-- Gemini API pricing: https://ai.google.dev/gemini-api/docs/pricing
-- GitHub Copilot plans: https://github.com/features/copilot/plans and https://docs.github.com/en/copilot/get-started/plans
-- Cursor pricing: https://cursor.com/pricing
+Gaps & data quality notes
+- Enterprise packaging and negotiated discounts (Google Vertex enterprise, Anthropic enterprise, OpenAI enterprise) are often missing from public pages; we mark these as "enterprise-only" gaps and will not estimate.
+- IDE vendors (Cursor, Copilot) mix seat pricing with resold model calls — public pages sometimes omit pass-through model rates; we'll surface these gaps explicitly in Section 05.
 
-
-Status: section drafted (pending Section 05 detailed breakdowns).
+Next actions (executed/planned)
+- Executed: Added platform comparison table with public granularity flags (this file). Collected vendor pricing pages into Section 05 and Section 04.
+- Planned (highest-leverage next): Compute two representative workload cost examples (light interactive session and long-horizon container-run session) using the public per-token and per-session lines; place worked examples in Section 05 and mark Section 03 as draft->done once examples corroborate the comparison table.

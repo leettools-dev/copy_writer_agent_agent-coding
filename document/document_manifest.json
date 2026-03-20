@@ -27,7 +27,7 @@
       "section_id": "03-top5-platforms",
       "title": "Top five agentic-coding platforms — feature and cost overview",
       "file": "document/sections/03-top5-platforms.md",
-      "status": "pending",
+      "status": "draft",
       "summary": "Listings and short profiles of the top 5 platforms, with direct pricing links and a cost breakdown plan.",
       "evidence_plan": "Use vendor pricing pages (OpenAI, Anthropic, Google, GitHub/Copilot, Cursor/Replit) and vendor docs.",
       "table_plan": "Create a table listing each platform, core components, and pricing URL.",
@@ -37,7 +37,7 @@
       "section_id": "04-component-costs",
       "title": "Important components and per-component cost taxonomy",
       "file": "document/sections/04-component-costs.md",
-      "status": "pending",
+      "status": "draft",
       "summary": "Define components (model tokens, tool calls, container sessions, storage, IDE seats) and show typical cost ranges.",
       "table_plan": "Table of component definitions and mapping to pricing lines; candidate data source: OpenAI pricing page as canonical example."
     },
@@ -45,7 +45,7 @@
       "section_id": "05-platform-cost-breakdowns",
       "title": "Detailed cost breakdowns for each top platform",
       "file": "document/sections/05-platform-cost-breakdowns.md",
-      "status": "pending",
+      "status": "draft",
       "summary": "Per-platform detailed cost breakdowns with direct citations to public pricing pages.",
       "evidence_plan": "Gather official pricing pages; avoid estimating unlisted costs; where data missing, record gaps."
     },
@@ -75,18 +75,17 @@
     {
       "instruction": "Top five agentic-coding platforms must be listed.",
       "status": "pass",
-      "notes": "Section 03 will fulfill this. Candidate platforms: OpenAI Codex/GPTs, Anthropic Claude Code, Google Antigravity/Gemini, GitHub Copilot/Code Assistants, Cursor/IDE-native agents."
+      "notes": "Section 03 lists the five platforms: OpenAI, Anthropic (Claude), Google (Gemini/Vertex), GitHub Copilot, Cursor."
     },
     {
       "instruction": "List most important components and their cost.",
-      "status": "pending",
-      "notes": "Section 04 maps components; Section 05 will show per-platform prices."
+      "status": "pass",
+      "notes": "Section 04 defines components (tokens, tool calls, containers, seats, storage) and maps them to vendor-published pricing lines."
     },
     {
       "instruction": "Provide detailed cost breakdown for every top platform with direct source links.",
       "status": "pending",
-      "notes": "Section 05 will collect vendor pricing pages and cite them."
+      "notes": "Section 05 drafted with headline public pricing lines and direct pricing URLs; next step is representative worked examples using these lines (in progress)."
     }
   ]
-}
 }
