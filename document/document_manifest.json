@@ -46,7 +46,7 @@
       "section_id": "05-platform-cost-breakdowns",
       "title": "Detailed cost breakdowns for each top platform",
       "file": "document/sections/05-platform-cost-breakdowns.md",
-      "status": "draft",
+      "status": "done",
       "summary": "Per-platform detailed cost breakdowns with direct citations to public pricing pages.",
       "evidence_plan": "Gather official pricing pages; avoid estimating unlisted costs; where data missing, record gaps."
     },
@@ -85,8 +85,8 @@
     },
     {
       "instruction": "We need to have detailed cost breakdown for every top agentic coding platform (with direct source to their public pricing page).",
-      "status": "in_progress",
-      "notes": "Section 05 will contain platform-by-platform worked examples using public pricing lines. Remaining gaps: seat-first vendor pass-through token rates and enterprise discounts."
+      "status": "pass",
+      "notes": "Section 05 completed using published vendor pricing pages and explicit worked examples. Remaining evidence gaps flagged: seat-first vendor pass-through token rates and enterprise-negotiated discounts (enterprise-only)."
     }
   ]
 }

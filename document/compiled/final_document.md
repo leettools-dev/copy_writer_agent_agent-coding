@@ -237,15 +237,15 @@ Platform-by-platform (summary lines and pricing sources)
 
 1) OpenAI (API / Agents / Codex family)
 - Pricing source: https://developers.openai.com/api/docs/pricing/
-- Key published lines used below: gpt-5.4 short-context Input $2.50 / 1M tokens; Output $15.00 / 1M tokens (short context); tool call $2.50 / 1k calls; container sessions (example 4 GB = $0.12 per 20-min session); file storage $0.10 / GB-day.
+- Key published lines used below (as of 2026-03-20): gpt-5.4 short-context Input $2.50 / 1M tokens; Output $15.00 / 1M tokens (short context); tool call $2.50 / 1k calls; container sessions (example 4 GB = $0.12 per 20-min session); file storage $0.10 / GB-day.
 
 2) Anthropic (Claude platform)
 - Pricing source: https://platform.claude.com/docs/en/about-claude/pricing
-- Key published lines used below: example Claude Opus 4.6 Input $5 / MTok; Output $25 / MTok; code-execution container allowance (1,550 free container hours; $0.05 / hour beyond); web search $10 / 1k.
+- Key published lines used below (as of 2026-03-20): Claude Opus example Input $5 / MTok; Output $25 / MTok; code-execution container allowance (1,550 free container hours; $0.05 / hour beyond); web search $10 / 1k.
 
 3) Google (Gemini API)
 - Pricing source: https://ai.google.dev/gemini-api/docs/pricing
-- Key published lines used below: Gemini 3.1 Pro Input $2 / 1M tokens; Output $12 / 1M tokens; grounding/search $14 / 1k queries after free allowance. (Code execution is billed as model token consumption on Gemini page.)
+- Key published lines used below (as of 2026-03-20): Gemini 3.1 Pro Input $2 / 1M tokens; Output $12 / 1M tokens; grounding/search $14 / 1k queries after free allowance. (Code execution is billed as model token consumption on the Gemini page.)
 
 4) GitHub Copilot
 - Pricing source: https://docs.github.com/en/copilot/get-started/plans
@@ -366,14 +366,30 @@ Cursor (seat-first)
 - Seat cost: Teams $40/user/mo or Pro $20/mo. Long-horizon runs are covered by seat allowances; per-token pass-through is not public.
 - Source: https://cursor.com/pricing
 
-Gaps, uncertainties, and how they affect decision-making
-- Seat-first vendors: Without published per-token pass-through rates, it's not possible to compute exact marginal costs for long-horizon or high-token workloads — treat seat-first vendor cost models as primarily fixed (seat) with opaque variable components; label as "vendor-managed resale gap."
-- Enterprise packaging: Discounts and pooled rate cards can materially change per-unit economics — these are enterprise-only gaps and cannot be inferred from public pages.
+Compact comparison table (worked examples)
 
-Conclusions from worked examples (published-line grounded)
-- For token-metered vendors, even moderately heavy agentic workloads (Example B) cost a few dollars per 6-hour run using published lines — token costs and container-session costs are the main drivers.
-- Tool grounding/search costs can dominate when workflows involve many external queries (Gemini grounding $14/1k can add materially to per-run cost; Anthropic web search at $10/1k is also material).
-- Seat-first vendors shift cost predictability outward (fixed subscription) but obscure marginal per-token pricing, complicating per-run marginal-cost forecasts for high-volume agentic workloads.
+| Platform | Example A — 30min session (published-lines) | Example B — 6hr run (published-lines) | Pricing source |
+|---|---:|---:|---|
+| OpenAI | $0.23 | $4.41 | https://developers.openai.com/api/docs/pricing/ |
+| Anthropic (Claude) | $0.25 (within free container allowance) | $5.00 (within free container allowance) | https://platform.claude.com/docs/en/about-claude/pricing |
+| Google (Gemini) | $0.21 | $4.20 | https://ai.google.dev/gemini-api/docs/pricing |
+| GitHub Copilot (seat-first) | $0.48–$0.63 (seat amortized examples) | seat amortized + possible metering | https://docs.github.com/en/copilot/get-started/plans |
+| Cursor (seat-first) | $0.50–$0.67 (seat amortized examples) | seat amortized | https://cursor.com/pricing |
+
+Notes on the table and methodology
+- All numeric totals above are computed from published vendor pricing lines cited in the Pricing source column and the explicit assumptions in the representative examples. We did not infer or invent any per-token passthrough rates for seat-first vendors (Copilot, Cursor); those are marked as gaps.
+- Where vendors publish free allowances (Anthropic container-hours), we prefer the within-allowance result and show a conservative ‘if-billed’ alternative in the worked-example text.
+- Grounding/search calls and other tool charges can dominate on workflows with many external queries; those rows are included explicitly in calculations rather than hidden inside model token costs whenever the vendor publishes separate tool lines (e.g., Google grounding $14/1k; Anthropic web search $10/1k; OpenAI tool call $2.50/1k).
+
+Gaps, uncertainties, and enterprise considerations
+- Seat-first vendors: Copilot and Cursor make it difficult to compute marginal per-token costs for heavy agentic workloads because public pages emphasize seat fees and usage multipliers rather than per-token pass-through. Marked as "vendor-managed resale — gap."
+- Enterprise deals and negotiated discounts: public list prices can be materially different from enterprise rate cards; for procurement-grade forecasts, contact vendor sales for committed-usage pricing.
+- Hidden infra & networking: cloud provider network egress, storage IO, and third-party integrations can add to enterprise bills; these are outside vendor model pricing tables and should be modeled separately when procurement-grade accuracy is required.
+
+Conclusions and implications for where cost reductions matter
+- For token-metered platforms (OpenAI, Anthropic, Google), marginal cost per interactive session is low (sub-dollar) at the scale modeled; main levers to lower operating cost are: (a) reducing expensive model output tokens via prompt engineering or shorter outputs; (b) reducing grounding/tool calls; (c) reducing container memory/CPU profiles or session duration.
+- Grounding/search and tool-call pricing can dominate for workflows that make many external queries — optimizing cache usage, batching, and local embeddings reduces these variable costs.
+- Seat-first platforms shift economic risk from per-call variable costs to fixed recurring costs; for high-frequency heavy workloads, seat-first arrangements can become more expensive unless vendor-managed resale provides favorable per-token pass-through in enterprise contracts.
 
 Sources (direct vendor pricing pages)
 - OpenAI — Pricing: https://developers.openai.com/api/docs/pricing/
@@ -382,9 +398,11 @@ Sources (direct vendor pricing pages)
 - GitHub Copilot plans: https://docs.github.com/en/copilot/get-started/plans
 - Cursor pricing: https://cursor.com/pricing
 
-Notes and next steps
-- These worked examples use explicit, published vendor pricing lines and conservative assumptions (token counts, tool-call counts, container sizes). They are intended to validate the component taxonomy and illustrate where cost reductions would most affect adoption.
-- Remaining evidence gaps to resolve separately: seat-first vendor pass-through token rates (vendor-managed resale) and enterprise-negotiated discounts. We mark these as explicit gaps in the manifest and Section 05.
+Next steps
+- If procurement-grade forecasts are needed, request enterprise rate cards from vendors for pooled usage and ask seat-first vendors for pass-through mapping or usage-to-token multipliers.
+- Use these worked examples as inputs to Section 06 (Where the next breakthroughs will come from) to map which technical innovations yield the biggest cost/utility improvements.
+
+(Section updated: 2026-03-20 — contains worked examples A and B computed from published pricing lines; gaps and enterprise-only items flagged.)
 
 06 Where the next breakthroughs will come from
 
