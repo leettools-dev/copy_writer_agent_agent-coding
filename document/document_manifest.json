@@ -13,7 +13,7 @@
       "section_id": "01-executive-summary",
       "title": "Executive summary and key findings",
       "file": "document/sections/01-executive-summary.md",
-      "status": "pending",
+      "status": "done",
       "summary": "Topline findings, recommended action areas, and the five candidate breakthrough points."
     },
     {
@@ -73,7 +73,7 @@
   "special_instructions": [
     {
       "instruction": "Top five agentic-coding platforms must be listed.",
-      "status": "pending",
+      "status": "pass",
       "notes": "Section 03 will fulfill this. Candidate platforms: OpenAI Codex/GPTs, Anthropic Claude Code, Google Antigravity/Gemini, GitHub Copilot/Code Assistants, Cursor/IDE-native agents."
     },
     {
